@@ -1,0 +1,53 @@
+name: Daily RFP Check
+
+on:
+  schedule:
+    # 12:00 UTC = 8:00 AM Eastern (7:00 AM during EDT). Adjust as you like —
+    # cron is UTC regardless of your local time / DST.
+    - cron: "0 12 * * *"
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write   # needed to commit the updated state file + report back
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Run monitor
+        run: python monitor.py
+
+      - name: Commit updated state, report, and dashboard
+        run: |
+          git config user.name "rfp-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add state/seen_rfps.json state/history.json reports/ docs/
+          git diff --staged --quiet || git commit -m "Daily RFP check: $(date -u +%Y-%m-%d)"
+          git push
+
+      # Emails the day's report every run. Requires 3 repo secrets — see
+      # README "Set up the daily email" section for the 2-minute setup.
+      - name: Email report
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_APP_PASSWORD }}
+          subject: "Daily RFP Report"
+          to: ${{ secrets.MAIL_TO }}
+          from: RFP Monitor
+          body: file://reports/latest.md
