@@ -1,6 +1,6 @@
 # Daily RFP Report — 2026-07-08
 
-**1 new posting(s) found.**
+No new postings found today across any tracked agency.
 
 ## NYCHA (0 new)
 _No new postings._
@@ -14,8 +14,8 @@ _No new postings._
 ## BPCA (0 new)
 _No new postings._
 
-## NYC EDC (1 new)
-- [Join NYCEDCs Vendors List for Contracting Opportunities](https://a856-cityrecord.nyc.gov/RequestDetail/20260609064) (Posted: 2026-06-16)
+## NYC EDC (0 new)
+_No new postings._
 
 ## DASNY (0 new)
 _No new postings._
