@@ -143,6 +143,55 @@ def _stable_id(*parts):
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:16]
 
 
+def _parse_date_safe(value):
+    """Best-effort parse of a date-ish string into a date object. City
+    Record's date fields show up as plain 'YYYY-MM-DD' or with a time
+    component like 'YYYY-MM-DDT00:00:00.000' — this handles both and
+    returns None for anything else rather than raising."""
+    if not isinstance(value, str) or len(value) < 10:
+        return None
+    try:
+        return dt.date.fromisoformat(value[:10])
+    except ValueError:
+        return None
+
+
+def _find_date_field(row, keywords):
+    """Scan row keys for the first one matching any of `keywords` (substring,
+    case-insensitive) whose value parses as a date. Used instead of a fixed
+    field name because City Record's exact column names have drifted before
+    and aren't guaranteed to match what's hard-coded here."""
+    for key, value in row.items():
+        if any(kw in key.lower() for kw in keywords):
+            parsed = _parse_date_safe(value)
+            if parsed:
+                return parsed
+    return None
+
+
+def _is_currently_relevant(row, lookback_days):
+    """The actual bug fix: without this, every notice ever published for an
+    agency (award notices, corrections, hearings going back to the 2000s)
+    passes the keyword filter just as easily as a real open solicitation,
+    because nothing was checking dates at all. This keeps a row only if:
+      - it has a closing/due date that hasn't passed yet (still open), or
+      - it has no detectable closing date but was posted within the
+        lookback window (recent enough to be worth surfacing).
+    Anything else — old, closed, or otherwise stale — is dropped."""
+    today = dt.date.today()
+    close_date = _find_date_field(row, ["end_date", "enddate", "due", "close", "closing", "deadline"])
+    if close_date is not None:
+        return close_date >= today
+
+    posted_date = _find_date_field(row, ["start_date", "startdate", "issue_date", "issuedate", "posted", "date"])
+    if posted_date is not None:
+        return (today - posted_date).days <= lookback_days
+
+    # No usable date at all — err toward excluding rather than flooding the
+    # report with undatable historical noise.
+    return False
+
+
 def render_page(url, wait_ms=4000, wait_selector=None, timeout_ms=30000):
     """Fully render a JS-driven page with headless Chromium and return the
     resulting HTML. Used for sites (DDC, EDC, SCA) whose current-opportunity
@@ -318,6 +367,8 @@ def fetch_city_record(agency_label, match_strings):
         if not any(m.lower() in blob for m in match_strings):
             continue
         if not any(k in blob for k in SOLICITATION_KEYWORDS):
+            continue
+        if not _is_currently_relevant(row, LOOKBACK_DAYS):
             continue
 
         title = (
