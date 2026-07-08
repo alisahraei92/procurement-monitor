@@ -234,7 +234,16 @@
     ]
   ],
   "NYC DDC": [],
-  "NYC EDC": [],
+  "NYC EDC": [
+    [
+      "contracting",
+      "join",
+      "list",
+      "nycedc",
+      "opportunities",
+      "vendors"
+    ]
+  ],
   "NYC H+H": [],
   "NYC SCA": [],
   "NYCHA": []
