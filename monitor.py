@@ -203,19 +203,28 @@ def render_page(url, wait_ms=4000, wait_selector=None, timeout_ms=30000):
     to a fixed wait_ms if the selector never appears, rather than failing
     outright — some of these sites may render an empty "no results" state
     that never adds the selector, which is a legitimate outcome, not an error.
+
+    Uses wait_until="domcontentloaded" rather than "networkidle": several
+    government sites keep a background connection open indefinitely
+    (analytics beacons, polling, etc.), so "networkidle" — wait for ALL
+    network activity to stop — reliably times out on them even once the
+    actual content has long since loaded. domcontentloaded + an explicit
+    settle wait is more reliable in practice.
     """
     with sync_playwright() as p:
         browser = p.chromium.launch()
         try:
-            page = browser.new_page(user_agent=USER_AGENT)
-            page.goto(url, timeout=timeout_ms, wait_until="networkidle")
+            page = browser.new_page(
+                user_agent=USER_AGENT,
+                extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+            )
+            page.goto(url, timeout=timeout_ms, wait_until="domcontentloaded")
             if wait_selector:
                 try:
                     page.wait_for_selector(wait_selector, timeout=timeout_ms)
                 except Exception:
                     pass
-            else:
-                page.wait_for_timeout(wait_ms)
+            page.wait_for_timeout(wait_ms)
             html = page.content()
         finally:
             browser.close()
@@ -339,30 +348,42 @@ def diff_against_state(agency, items, state):
 # --------------------------------------------------------------------------
 
 def fetch_city_record(agency_label, match_strings):
-    """Pull recent City Record notices and keep only ones that (a) mention
-    the target agency and (b) look like a solicitation/RFP/bid rather than a
-    hearing notice, award notice, or unrelated posting.
+    """Pull City Record notices for one agency and keep only ones that look
+    like a solicitation/RFP/bid and are still open (or recently posted).
 
-    The Socrata field names on this dataset have shifted over the years
-    (agency vs agency_name, notice_type vs category, etc.), so rather than
-    hard-coding a field name that might be stale, this pulls a recent slice
-    of rows and matches against ALL string field values. Slightly less
-    efficient than a server-side $where clause, but robust to schema drift.
+    Previous version pulled the 5000 most-recently-touched rows across the
+    ENTIRE city dataset (all agencies) and filtered client-side — which
+    meant a small agency's notices could easily fall outside that slice
+    entirely and silently show zero, with no error to explain why. This
+    uses Socrata's full-text search ($q) scoped to each agency's match
+    string instead, which searches every field server-side without needing
+    to know the exact agency-name column (schema names have drifted
+    before) — much higher chance of actually finding the agency's rows.
     """
-    since = (dt.date.today() - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
-    items = []
-    try:
-        params = {
-            "$limit": 5000,
-            "$order": ":id DESC",
-        }
-        resp = _get(CITY_RECORD_BASE, params=params)
-        resp.raise_for_status()
-        rows = resp.json()
-    except Exception as e:
-        return items, f"ERROR fetching City Record for {agency_label}: {e}"
+    all_rows = []
+    errors = []
+    for match in match_strings:
+        try:
+            params = {"$limit": 1000, "$q": match}
+            resp = _get(CITY_RECORD_BASE, params=params)
+            resp.raise_for_status()
+            all_rows.extend(resp.json())
+        except Exception as e:
+            errors.append(f"'{match}': {e}")
 
-    for row in rows:
+    if not all_rows:
+        if errors:
+            return [], f"ERROR fetching City Record for {agency_label}: {'; '.join(errors)}"
+        return [], None
+
+    items = []
+    seen_rows = set()
+    for row in all_rows:
+        row_key = json.dumps(row, sort_keys=True)
+        if row_key in seen_rows:
+            continue
+        seen_rows.add(row_key)
+
         blob = " ".join(str(v) for v in row.values() if isinstance(v, str)).lower()
         if not any(m.lower() in blob for m in match_strings):
             continue
@@ -422,13 +443,18 @@ def fetch_nycha_own():
     """NYCHA's procurement page includes a '<year> Proposer Pre-Bidders
     Conference Attendance List' section listing current RFPs/RFQs by
     solicitation number, e.g. 'RFQ #521185 IDIQ Contract for...'. That
-    solicitation number is used as the stable id."""
+    solicitation number is used as the stable id.
+
+    Uses render_page() (headless Chromium) rather than a plain requests.get:
+    nyc.gov has been observed returning 403 Forbidden to plain HTTP
+    requests from a data-center IP (GitHub Actions runners included) even
+    though the page itself needs no JavaScript — a real browser fingerprint
+    gets through where a bare requests.get gets blocked."""
     items = []
     error = None
     try:
-        resp = _get(NYCHA_OWN_URL)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
+        html = render_page(NYCHA_OWN_URL, wait_ms=2000)
+        soup = BeautifulSoup(html, "html.parser")
 
         heading = soup.find(
             lambda tag: tag.name in ("h2", "h3")
