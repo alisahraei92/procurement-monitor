@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procurement Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDEAE1;
+    --paper-raised: #F5F3EC;
+    --ink: #1E2A44;
+    --ink-soft: #4B5670;
+    --rule: #C9C2AC;
+    --brass: #A9782F;
+    --verdigris: #3C6E62;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  header {
+    padding: 3rem 1.5rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--rule);
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .subtitle .count { color: var(--brass); font-weight: 600; }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  input[type="search"] {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 0.55rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    flex: 1 1 220px;
+    min-width: 0;
+  }
+  input[type="search"]:focus-visible, .tab:focus-visible {
+    outline: 2px solid var(--verdigris);
+    outline-offset: 2px;
+  }
+  input[type="search"]::placeholder { color: var(--ink-soft); }
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tab {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    padding: 0.4rem 0.7rem;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .tab.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+  .agency-section { margin-bottom: 2.2rem; }
+  .agency-section.hidden { display: none; }
+  .agency-tab-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .agency-tab-label .n {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  .entry {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .entry.hidden { display: none; }
+  .stamp {
+    flex: none;
+    width: 58px;
+    height: 58px;
+    border: 2px solid var(--brass);
+    border-radius: 50%;
+    color: var(--brass);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.62rem;
+    line-height: 1.15;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-6deg);
+    opacity: 0.85;
+    letter-spacing: 0.03em;
+  }
+  .stamp .found { font-size: 0.55rem; opacity: 0.8; }
+  .stamp .date { font-weight: 600; font-size: 0.8rem; }
+  .entry-body { flex: 1; min-width: 0; }
+  .entry-title {
+    font-size: 0.98rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+  }
+  .entry-title:hover { color: var(--verdigris); }
+  .entry-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+  }
+  .entry-meta .sources { color: var(--verdigris); }
+  .empty-state {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    padding: 1rem 0;
+    font-style: italic;
+  }
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .entry { transition: opacity 0.15s ease; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Procurement Register</h1>
+  <div class="subtitle"><span class="count">18</span> notice(s) logged since tracking began &mdash; NYCHA, NYC SCA, NYC DDC, NYC EDC, NYC H+H, DASNY, BPCA</div>
+  <div class="controls">
+    <input type="search" id="search" placeholder="search title...">
+    <div class="tabs" id="tabs"></div>
+  </div>
+</header>
+<main id="main"></main>
+<footer>Last updated 2026-07-08 &middot; generated by the daily procurement monitor</footer>
+<script>
+const DATA = {"NYCHA": [], "NYC SCA": [], "NYC DDC": [], "BPCA": [], "NYC EDC": [], "DASNY": [{"id": "3432309999-P13", "agency": "DASNY", "title": "CNY Psychiatric Center \u2013 Furnish, Deliver and Setup Hospital Beds", "date": "07/02/2026", "due": "07/24/2026 - 2:30 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/cny-psychiatric-center-furnish-deliver-and-setup-hospital-beds", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3751509999", "agency": "DASNY", "title": "OPWDD Sunmount DDSO Buildings 11, 13 & 16 Demolition & Hazmat Abatement", "date": "06/30/2026", "due": "08/05/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/opportunities/rfps-bids/2026/opwdd-sunmount-ddso-buildings-11-13-16-demolition-hazmat-abatement", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3914309999-P12", "agency": "DASNY", "title": "Office of Court Administration \u2013 Furnish and Deliver Security Guard Booths", "date": "06/29/2026", "due": "07/20/2026 - 2:30 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/office-court-administration-furnish-and-deliver-security-guard-booths", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3633309999", "agency": "DASNY", "title": "CUNY College of Staten Island Campus Sidewalk Reconstruction Phase 2 andAssociated Hazmat Abatement (EOI)", "date": "06/26/2026", "due": "07/24/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-college-staten-island-campus-sidewalk-reconstruction-phase-2", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3804709999", "agency": "DASNY", "title": "OPWDD Finger Lakes DDSO Cobblestone Hostels 7844, 7846, 7847, 7849 & 7850 VRF Systems Including Lead Containing Painted Component Removals", "date": "06/26/2026", "due": "08/04/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/opwdd-finger-lakes-ddso-cobblestone-hostels-7844-7846-7847-7849-7850-0", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "357550", "agency": "DASNY", "title": "CUNY Brooklyn College LaGuardia Library IT Server HVAC Upgrade and HAZMAT Abatement", "date": "06/25/2026", "due": "08/11/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/cuny-brooklyn-college-laguardia-library-it-server-hvac-upgrade-and", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3816609999", "agency": "DASNY", "title": "OMH Bronx Psychiatric Center PCB Remediation Transformer Rooms 1 & 2", "date": "06/18/2026", "due": "07/16/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/omh-bronx-psychiatric-center-pcb-remediation-transformer-rooms-1-2", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3866609999", "agency": "DASNY", "title": "OPWDD Sunmount DDSO Building 10 Roof Replacement and Asbestos Abatement", "date": "06/18/2026", "due": "07/23/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/opwdd-sunmount-ddso-building-10-roof-replacement-and-asbestos", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3804509999", "agency": "DASNY", "title": "OPWDD Bronx DDSO Hostel 2565 Retaining Wall at Bedford Park Blvd", "date": "06/17/2026", "due": "07/23/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/opwdd-bronx-ddso-hostel-2565-retaining-wall-bedford-park-blvd", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "380290", "agency": "DASNY", "title": "CUNY Queens College Rathaus Hall 2nd Floor Renovation and Associated Asbestos Abatement", "date": "06/12/2026", "due": "07/10/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/cuny-queens-college-rathaus-hall-2nd-floor-renovation-and-associated", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3831409999", "agency": "DASNY", "title": "OMH Pilgrim Psychiatric Center Buildings 81, 82 & 83 Rehab Egress Stairs and Basement Foundation", "date": "06/12/2026", "due": "07/10/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/omh-pilgrim-psychiatric-center-buildings-81-82-83-rehab-egress-stairs", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "7636", "agency": "DASNY", "title": "New York State Office for People With Developmental Disabilities (OPWDD) New Addition at Valley Ridge CIT - Construction Manager-Build Services - RFQ", "date": "06/10/2026", "due": "07/07/2026 - 3:00 PM", "status": "New", "url": "https://www.dasny.org/opportunities/rfps-bids/2026/new-york-state-office-people-developmental-disabilities-opwdd-new", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3860009999", "agency": "DASNY", "title": "CUNY Borough of Manhattan Community College Cycle 9C Facade Restoration & Associated Asbestos Abatement", "date": "06/10/2026", "due": "07/29/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/cuny-borough-manhattan-community-college-cycle-9c-facade-restoration", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3845609999", "agency": "DASNY", "title": "CUNY Lehman College Speech, Theatre and Music Plaza Roof Replacement (EOI)", "date": "06/09/2026", "due": "07/07/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/cuny-lehman-college-speech-theatre-and-music-plaza-roof-replacement", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3578409999", "agency": "DASNY", "title": "CUNY College of Staten Island Buildings 1A, 2A, 1C, 1L, & 6S Cupola Roof, Lantern and Skylight Restoration, Masonry Wall Repairs, Roof Cover Replacement and Associated Asbestos Abatement (Open Only To MWBE/Small)", "date": "06/09/2026", "due": "07/28/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/cuny-college-staten-island-buildings-1a-2a-1c-1l-6s-cupola-roof", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3787709999", "agency": "DASNY", "title": "OMH St. Lawrence Psychiatric Center Decentralize Steam Production From Building 201", "date": "06/02/2026", "due": "07/15/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/omh-st-lawrence-psychiatric-center-decentralize-steam-production", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3590009999", "agency": "DASNY", "title": "OMH Mid-Hudson Forensic Psychiatric Center Sanitary Sewer and Water Supply Replacement", "date": "05/29/2026", "due": "07/23/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/omh-mid-hudson-forensic-psychiatric-center-sanitary-sewer-and-water", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}, {"id": "3734409999", "agency": "DASNY", "title": "OPWDD Sunmount DDSO Upgrade Electronic Security Systems", "date": "05/12/2026", "due": "07/14/2026 - 2:00 PM", "status": "New", "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/opwdd-sunmount-ddso-upgrade-electronic-security-systems", "source": "DASNY RFPs & Bids", "found_date": "2026-07-08"}], "NYC H+H": []};
+const AGENCY_ORDER = ["NYCHA", "NYC SCA", "NYC DDC", "BPCA", "NYC EDC", "DASNY", "NYC H+H"];
+
+const main = document.getElementById('main');
+const tabsEl = document.getElementById('tabs');
+const searchEl = document.getElementById('search');
+let activeAgency = 'ALL';
+
+function stampDate(d) {
+  if (!d) return '?';
+  const parts = d.split('-');
+  return parts.length === 3 ? parts[1] + '/' + parts[2] : d;
+}
+
+function render() {
+  main.innerHTML = '';
+  const q = searchEl.value.trim().toLowerCase();
+
+  AGENCY_ORDER.forEach(agency => {
+    const items = (DATA[agency] || []).slice().sort((a, b) => (b.found_date || '').localeCompare(a.found_date || ''));
+    const section = document.createElement('section');
+    section.className = 'agency-section';
+    if (activeAgency !== 'ALL' && activeAgency !== agency) section.classList.add('hidden');
+
+    const label = document.createElement('div');
+    label.className = 'agency-tab-label';
+    label.innerHTML = agency + ' <span class="n">(' + items.length + ')</span>';
+    section.appendChild(label);
+
+    const visibleItems = items.filter(it => !q || it.title.toLowerCase().includes(q));
+    if (visibleItems.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'empty-state';
+      empty.textContent = q ? 'No matches.' : 'Nothing logged yet.';
+      section.appendChild(empty);
+    } else {
+      visibleItems.forEach(it => {
+        const entry = document.createElement('div');
+        entry.className = 'entry';
+        const sources = it.sources && it.sources.length > 1 ? it.sources.join(' + ') : '';
+        entry.innerHTML =
+          '<div class="stamp"><span class="found">FOUND</span><span class="date">' + stampDate(it.found_date) + '</span></div>' +
+          '<div class="entry-body">' +
+            '<a class="entry-title" href="' + (it.url || '#') + '" target="_blank" rel="noopener">' + it.title + '</a>' +
+            '<div class="entry-meta">' +
+              (it.date ? 'posted ' + it.date + '  ' : '') +
+              (it.due ? 'due ' + it.due + '  ' : '') +
+              (sources ? '<span class="sources">' + sources + '</span>' : '') +
+            '</div>' +
+          '</div>';
+        section.appendChild(entry);
+      });
+    }
+    main.appendChild(section);
+  });
+}
+
+function buildTabs() {
+  const allTab = document.createElement('button');
+  allTab.className = 'tab active';
+  allTab.textContent = 'ALL';
+  allTab.onclick = () => setActive('ALL', allTab);
+  tabsEl.appendChild(allTab);
+
+  AGENCY_ORDER.forEach(agency => {
+    const btn = document.createElement('button');
+    btn.className = 'tab';
+    btn.textContent = agency;
+    btn.onclick = () => setActive(agency, btn);
+    tabsEl.appendChild(btn);
+  });
+}
+
+function setActive(agency, btnEl) {
+  activeAgency = agency;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btnEl.classList.add('active');
+  render();
+}
+
+searchEl.addEventListener('input', render);
+buildTabs();
+render();
+</script>
+</body>
+</html>
