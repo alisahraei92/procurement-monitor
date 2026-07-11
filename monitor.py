@@ -249,11 +249,21 @@ def _is_currently_relevant(row, lookback_days):
       - anything else -> drop
     """
     today = dt.date.today()
+
+    # Sanity guard against bad data: a notice posted years ago that still
+    # carries a "future" due date (observed live: a 2019 posting surfaced
+    # as open). If we can see a posted date and it's over ~400 days old,
+    # it's not a real open solicitation regardless of what due_date claims.
+    posted_date = _find_date_field(row, ["start_date", "startdate", "issue_date", "issuedate", "posted", "release"])
+    if posted_date is not None and (today - posted_date).days > 400:
+        return False
+
     close_date = _find_date_field(row, ["due", "deadline", "closing", "close"])
     if close_date is not None:
         return close_date >= today
 
-    posted_date = _find_date_field(row, ["start_date", "startdate", "issue_date", "issuedate", "posted", "release", "date"])
+    if posted_date is None:
+        posted_date = _find_date_field(row, ["date"])
     if posted_date is not None:
         return (today - posted_date).days <= lookback_days
 
@@ -1043,7 +1053,7 @@ def fetch_bpca():
 # Report generation
 # --------------------------------------------------------------------------
 
-def build_report(new_by_agency, errors, run_date):
+def build_report(new_by_agency, errors, run_date, open_by_agency=None):
     lines = [f"# Daily RFP Report — {run_date}", ""]
 
     total_new = sum(len(v) for v in new_by_agency.values())
@@ -1054,6 +1064,18 @@ def build_report(new_by_agency, errors, run_date):
 
     lines.append("")
 
+    def _format_item(it):
+        title = it["title"]
+        url = it.get("url", "")
+        date = it.get("date", "")
+        due = it.get("due", "")
+        sources = it.get("sources") or [it.get("source", "")]
+        meta_bits = [b for b in [f"Posted: {date}" if date else "", f"Due: {due}" if due else ""] if b]
+        if len(sources) > 1:
+            meta_bits.append("seen on: " + " + ".join(s for s in sources if s))
+        meta = f" ({', '.join(meta_bits)})" if meta_bits else ""
+        return f"- [{title}]({url}){meta}"
+
     for agency in ["NYCHA", "NYC SCA", "NYC DDC", "BPCA", "NYC EDC", "DASNY", "NYC H+H"]:
         items = new_by_agency.get(agency, [])
         lines.append(f"## {agency} ({len(items)} new)")
@@ -1061,17 +1083,26 @@ def build_report(new_by_agency, errors, run_date):
             lines.append("_No new postings._")
         else:
             for it in items:
-                title = it["title"]
-                url = it.get("url", "")
-                date = it.get("date", "")
-                due = it.get("due", "")
-                sources = it.get("sources") or [it.get("source", "")]
-                meta_bits = [b for b in [f"Posted: {date}" if date else "", f"Due: {due}" if due else ""] if b]
-                if len(sources) > 1:
-                    meta_bits.append("seen on: " + " + ".join(s for s in sources if s))
-                meta = f" ({', '.join(meta_bits)})" if meta_bits else ""
-                lines.append(f"- [{title}]({url}){meta}")
+                lines.append(_format_item(it))
         lines.append("")
+
+    # Full currently-open snapshot — everything fetched and filtered THIS
+    # run, independent of the seen-state bookkeeping above. This section is
+    # always complete even if the state file is stale or polluted, so the
+    # report's usefulness never depends on state hygiene.
+    if open_by_agency is not None:
+        total_open = sum(len(v) for v in open_by_agency.values())
+        lines.append(f"# All currently open ({total_open} across all agencies)")
+        lines.append("")
+        for agency in ["NYCHA", "NYC SCA", "NYC DDC", "BPCA", "NYC EDC", "DASNY", "NYC H+H"]:
+            items = open_by_agency.get(agency, [])
+            lines.append(f"## {agency} ({len(items)} open)")
+            if not items:
+                lines.append("_None found._")
+            else:
+                for it in sorted(items, key=lambda x: x.get("date", ""), reverse=True):
+                    lines.append(_format_item(it))
+            lines.append("")
 
     if errors:
         lines.append("## Fetch errors")
@@ -1404,6 +1435,7 @@ OWN_SITE_FETCHERS = {
 def main():
     state = load_state()
     new_by_agency = {}
+    open_by_agency = {}
     errors = []
 
     # --- City Record + Current Solicitations + PASSPort (+ own site) ---
@@ -1433,6 +1465,7 @@ def main():
         # project that posts to the agency site first and City Record days
         # later (or vice versa) is only ever reported once.
         deduped = dedupe_items(all_items)
+        open_by_agency[agency] = deduped
         new_items, updated_fp = diff_against_state(agency, deduped, state)
         new_by_agency[agency] = new_items
         state[agency] = updated_fp
@@ -1442,6 +1475,7 @@ def main():
     if dasny_err:
         errors.append(dasny_err)
     new_dasny, updated_fp = diff_against_state("DASNY", dasny_items, state)
+    open_by_agency["DASNY"] = dasny_items
     new_by_agency["DASNY"] = new_dasny
     state["DASNY"] = updated_fp
 
@@ -1450,12 +1484,13 @@ def main():
     if bpca_err:
         errors.append(bpca_err)
     new_bpca, updated_fp = diff_against_state("BPCA", bpca_items, state)
+    open_by_agency["BPCA"] = bpca_items
     new_by_agency["BPCA"] = new_bpca
     state["BPCA"] = updated_fp
 
     # --- Write outputs ---
     run_date = dt.date.today().isoformat()
-    report_md = build_report(new_by_agency, errors, run_date)
+    report_md = build_report(new_by_agency, errors, run_date, open_by_agency=open_by_agency)
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     report_path = REPORTS_DIR / f"rfp_report_{run_date}.md"
