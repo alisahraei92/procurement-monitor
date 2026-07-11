@@ -30,6 +30,7 @@ and reported inline so one broken source doesn't kill the whole run.
 """
 
 import json
+import time
 import os
 import re
 import sys
@@ -148,6 +149,15 @@ SOLICITATION_KEYWORDS = [
     "expression of interest", "eoi", "rfi", "request for information",
 ]
 
+# Notice types that are NOT solicitations even when they keyword-match
+# (e.g. a board-meeting notice whose blob happens to contain "award" or
+# "procurement"). Checked against the same blob; any hit excludes the row.
+EXCLUDE_KEYWORDS = [
+    "public hearing", "board meeting", "board meetings", "committee meeting",
+    "public meeting", "notice of adoption", "notice of public hearing",
+    "agency rule", "court notice",
+]
+
 DASNY_URL = "https://www.dasny.org/opportunities/rfps-bids"
 BPCA_URL = "https://bpca.ny.gov/apply/rfp-opp/"
 
@@ -156,10 +166,21 @@ BPCA_URL = "https://bpca.ny.gov/apply/rfp-opp/"
 # Helpers
 # --------------------------------------------------------------------------
 
-def _get(url, **kwargs):
+def _get(url, retries=2, **kwargs):
+    """HTTP GET with a small retry for transient failures (read timeouts,
+    momentary 5xx) — one live run failed solely because a single Socrata
+    API call timed out once."""
     headers = kwargs.pop("headers", {})
     headers.setdefault("User-Agent", USER_AGENT)
-    return requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, **kwargs)
+    last_exc = None
+    for attempt in range(retries + 1):
+        try:
+            return requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, **kwargs)
+        except requests.exceptions.RequestException as e:
+            last_exc = e
+            if attempt < retries:
+                time.sleep(3 * (attempt + 1))
+    raise last_exc
 
 
 def _blob_matches(blob, match_strings):
@@ -467,6 +488,8 @@ def fetch_city_record(agency_label, match_strings):
             continue
         n_agency += 1
         if not any(k in blob for k in SOLICITATION_KEYWORDS):
+            continue
+        if any(k in blob for k in EXCLUDE_KEYWORDS):
             continue
         n_keyword += 1
         if not _is_currently_relevant(row, LOOKBACK_DAYS):
