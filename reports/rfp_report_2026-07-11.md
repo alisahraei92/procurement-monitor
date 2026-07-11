@@ -25,8 +25,8 @@ _No new postings._
 
 ## Fetch errors
 - ERROR: NYCHA own-site page structure changed (attendance-list heading not found)
+- ERROR fetching City Record for NYC SCA: 'SCHOOL CONSTRUCTION AUTHORITY': HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=30)
 - ERROR fetching DDC own site: Page.goto: Timeout 30000ms exceeded.
 Call log:
   - navigating to "https://ddcrfpdocuments.nyc.gov/rfp/", waiting until "domcontentloaded"
 
-- ERROR fetching BPCA: 403 Client Error: Forbidden for url: https://bpca.ny.gov/apply/rfp-opp/
