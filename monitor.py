@@ -199,33 +199,40 @@ def _parse_date_safe(value):
 
 
 def _find_date_field(row, keywords):
-    """Scan row keys for the first one matching any of `keywords` (substring,
-    case-insensitive) whose value parses as a date. Used instead of a fixed
-    field name because City Record's exact column names have drifted before
-    and aren't guaranteed to match what's hard-coded here."""
-    for key, value in row.items():
-        if any(kw in key.lower() for kw in keywords):
-            parsed = _parse_date_safe(value)
-            if parsed:
-                return parsed
+    """Scan row keys for one matching any of `keywords` (substring,
+    case-insensitive) whose value parses as a date. Keyword-major order:
+    earlier keywords in the list win over later ones regardless of the
+    row's own key order, so callers can express priority (e.g. 'due'
+    before anything else)."""
+    for kw in keywords:
+        for key, value in row.items():
+            if kw in key.lower():
+                parsed = _parse_date_safe(value)
+                if parsed:
+                    return parsed
     return None
 
 
 def _is_currently_relevant(row, lookback_days):
-    """The actual bug fix: without this, every notice ever published for an
-    agency (award notices, corrections, hearings going back to the 2000s)
-    passes the keyword filter just as easily as a real open solicitation,
-    because nothing was checking dates at all. This keeps a row only if:
-      - it has a closing/due date that hasn't passed yet (still open), or
-      - it has no detectable closing date but was posted within the
-        lookback window (recent enough to be worth surfacing).
-    Anything else — old, closed, or otherwise stale — is dropped."""
+    """Keeps a row only if it's still open or recently posted.
+
+    IMPORTANT, learned from live City Record schema: 'end_date' there is
+    the date the notice stops being PUBLISHED in the paper — usually the
+    same day it started — NOT the response deadline; the real deadline is
+    'due_date'. Treating end_date as a deadline wrongly rejected open
+    solicitations (verified via report diagnostics). So only due/deadline/
+    close-style fields count as a deadline, checked in priority order, and
+    end_date is ignored entirely.
+      - has a due/deadline/close date that hasn't passed -> keep
+      - no such date, but posted within the lookback window -> keep
+      - anything else -> drop
+    """
     today = dt.date.today()
-    close_date = _find_date_field(row, ["end_date", "enddate", "due", "close", "closing", "deadline"])
+    close_date = _find_date_field(row, ["due", "deadline", "closing", "close"])
     if close_date is not None:
         return close_date >= today
 
-    posted_date = _find_date_field(row, ["start_date", "startdate", "issue_date", "issuedate", "posted", "date"])
+    posted_date = _find_date_field(row, ["start_date", "startdate", "issue_date", "issuedate", "posted", "release", "date"])
     if posted_date is not None:
         return (today - posted_date).days <= lookback_days
 
