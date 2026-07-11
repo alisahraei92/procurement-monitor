@@ -1053,16 +1053,37 @@ def fetch_bpca():
 # Report generation
 # --------------------------------------------------------------------------
 
+def _parse_item_date(s):
+    """Parse an item's 'date' string in the formats used by our sources:
+    ISO (2026-07-08, City Record / Current Solicitations) and US
+    MM/DD/YYYY (07/02/2026, DASNY). Returns None if unparseable."""
+    if not s:
+        return None
+    s = str(s).strip()
+    d = _parse_date_safe(s)
+    if d:
+        return d
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", s)
+    if m:
+        try:
+            return dt.date(int(m.group(3)), int(m.group(1)), int(m.group(2)))
+        except ValueError:
+            return None
+    return None
+
+
 def build_report(new_by_agency, errors, run_date, open_by_agency=None):
-    lines = [f"# Daily RFP Report — {run_date}", ""]
-
-    total_new = sum(len(v) for v in new_by_agency.values())
-    if total_new == 0:
-        lines.append("No new postings found today across any tracked agency.")
-    else:
-        lines.append(f"**{total_new} new posting(s) found.**")
-
-    lines.append("")
+    """Three date-based tiers:
+      1. Posted in the last day   (posted date within 1 day of run date)
+      2. Posted in the last week  (2-7 days old)
+      3. All currently open       (everything, newest first)
+    Undated items (e.g. BPCA's flat PDF list) can't be date-bucketed, so
+    they appear in tier 1 only on the run where they're first seen (using
+    the state-based 'new' detection as a proxy for their posting date),
+    and in tier 3 always.
+    """
+    AGENCY_ORDER_LIST = ["NYCHA", "NYC SCA", "NYC DDC", "BPCA", "NYC EDC", "DASNY", "NYC H+H"]
+    today = _parse_date_safe(run_date) or dt.date.today()
 
     def _format_item(it):
         title = it["title"]
@@ -1076,25 +1097,55 @@ def build_report(new_by_agency, errors, run_date, open_by_agency=None):
         meta = f" ({', '.join(meta_bits)})" if meta_bits else ""
         return f"- [{title}]({url}){meta}"
 
-    for agency in ["NYCHA", "NYC SCA", "NYC DDC", "BPCA", "NYC EDC", "DASNY", "NYC H+H"]:
-        items = new_by_agency.get(agency, [])
-        lines.append(f"## {agency} ({len(items)} new)")
-        if not items:
-            lines.append("_No new postings._")
-        else:
-            for it in items:
-                lines.append(_format_item(it))
-        lines.append("")
+    # Titles of items that are new-to-state this run, used to place undated
+    # items into the last-day tier the first time they appear.
+    new_titles = {it["title"] for items in new_by_agency.values() for it in items}
 
-    # Full currently-open snapshot — everything fetched and filtered THIS
-    # run, independent of the seen-state bookkeeping above. This section is
-    # always complete even if the state file is stale or polluted, so the
-    # report's usefulness never depends on state hygiene.
+    day_bucket = {a: [] for a in AGENCY_ORDER_LIST}
+    week_bucket = {a: [] for a in AGENCY_ORDER_LIST}
+    if open_by_agency:
+        for agency in AGENCY_ORDER_LIST:
+            for it in open_by_agency.get(agency, []):
+                d = _parse_item_date(it.get("date"))
+                if d is not None:
+                    age = (today - d).days
+                    if age <= 1:
+                        day_bucket[agency].append(it)
+                    elif age <= 7:
+                        week_bucket[agency].append(it)
+                elif it["title"] in new_titles:
+                    day_bucket[agency].append(it)
+
+    lines = [f"# Daily RFP Report — {run_date}", ""]
+
+    def _emit_tier(header, bucket, empty_line):
+        total = sum(len(v) for v in bucket.values())
+        lines.append(f"# {header} ({total})")
+        lines.append("")
+        if total == 0:
+            lines.append(empty_line)
+            lines.append("")
+            return
+        for agency in AGENCY_ORDER_LIST:
+            items = bucket.get(agency, [])
+            if not items:
+                continue  # skip empty agencies in the top tiers to keep them scannable
+            lines.append(f"## {agency} ({len(items)})")
+            for it in sorted(items, key=lambda x: x.get("date", ""), reverse=True):
+                lines.append(_format_item(it))
+            lines.append("")
+
+    _emit_tier("New — posted in the last day", day_bucket,
+               "_Nothing posted in the last day._")
+    _emit_tier("Posted in the last week", week_bucket,
+               "_Nothing else posted in the last week._")
+
+    # Tier 3: complete open list, all agencies shown even when empty
     if open_by_agency is not None:
         total_open = sum(len(v) for v in open_by_agency.values())
         lines.append(f"# All currently open ({total_open} across all agencies)")
         lines.append("")
-        for agency in ["NYCHA", "NYC SCA", "NYC DDC", "BPCA", "NYC EDC", "DASNY", "NYC H+H"]:
+        for agency in AGENCY_ORDER_LIST:
             items = open_by_agency.get(agency, [])
             lines.append(f"## {agency} ({len(items)} open)")
             if not items:
