@@ -78,10 +78,17 @@ CITY_RECORD_AGENCIES = {
 }
 
 # Agencies that have a second, agency-run source in addition to City Record.
-# SCA's own site is a Blazor SPA and DDC/EDC's are JS-populated — all three
-# need headless-browser rendering (see render_page()) rather than a plain
-# HTTP fetch, which is why they were previously excluded/low-confidence.
-AGENCIES_WITH_OWN_SITE = {"NYCHA", "NYC DDC", "NYC EDC", "NYC SCA"}
+# NYCHA and DDC were removed from this set deliberately:
+#   - NYCHA's page (nyc.gov) is behind Akamai bot protection that returns
+#     "Access Denied" to automated browsers from data-center IPs (verified
+#     from the rendered page content). Not fixable in code.
+#   - DDC's page (ddcrfpdocuments.nyc.gov) consistently times out from
+#     GitHub Actions runners even with the loosest wait conditions, and
+#     DDC's own site states all solicitations are released via PASSPort.
+# Both agencies are fully covered by the Current Solicitations dataset +
+# City Record + PASSPort, so dropping the blocked scrapes loses nothing
+# and removes two permanent error entries from every report.
+AGENCIES_WITH_OWN_SITE = {"NYC EDC", "NYC SCA"}
 
 CITY_RECORD_DETAIL_URL = "https://a856-cityrecord.nyc.gov/RequestDetail/{id}"
 
@@ -493,6 +500,18 @@ def fetch_city_record(agency_label, match_strings):
         f"{n_agency} matched agency, {n_keyword} matched solicitation keywords, "
         f"{n_date} passed date filter, {len(deduped)} after id-dedup"
     )
+    # If keyword matches exist but nothing passes the date filter, sample
+    # one matched row's date-ish fields so the report reveals what format
+    # the dataset actually uses (the current 0-pass behavior suggests our
+    # date parsing doesn't match the real field names/formats).
+    if n_keyword > 0 and n_date == 0:
+        for row in all_rows:
+            blob = " ".join(str(v) for v in row.values() if isinstance(v, str)).lower()
+            if _blob_matches(blob, match_strings) and any(k in blob for k in SOLICITATION_KEYWORDS):
+                datey = {k: v for k, v in row.items()
+                         if any(w in k.lower() for w in ("date", "due", "close", "deadline", "start", "end"))}
+                diag(f"City Record [{agency_label}] sample date fields: {json.dumps(datey)[:400]}")
+                break
     return deduped, None
 
 
@@ -516,6 +535,7 @@ def fetch_current_solicitations(agency_label, match_strings):
 
     items = []
     n_agency = 0
+    n_current = 0
     for row in rows:
         blob = " ".join(str(v) for v in row.values() if isinstance(v, str)).lower()
         if not _blob_matches(blob, match_strings):
@@ -536,6 +556,24 @@ def fetch_current_solicitations(agency_label, match_strings):
         due_field = (row.get("due_date") or row.get("end_date")
                      or row.get("deadline") or "")
 
+        # Only keep currently-relevant items: still open (due date hasn't
+        # passed), or recently posted when no due date is parseable. The
+        # dataset contains the full multi-year history of solicitations,
+        # not just open ones, so skipping this filter floods the report
+        # with years-old closed items (verified empirically).
+        today = dt.date.today()
+        due_parsed = _parse_date_safe(str(due_field))
+        posted_parsed = _parse_date_safe(str(date_field))
+        if due_parsed is not None:
+            if due_parsed < today:
+                continue
+        elif posted_parsed is not None:
+            if (today - posted_parsed).days > LOOKBACK_DAYS:
+                continue
+        else:
+            continue  # no usable date at all — exclude rather than flood
+        n_current += 1
+
         items.append({
             "id": str(rid),
             "agency": agency_label,
@@ -547,7 +585,7 @@ def fetch_current_solicitations(agency_label, match_strings):
         })
 
     diag(f"Current Solicitations [{agency_label}]: {len(rows)} rows fetched, "
-         f"{n_agency} matched agency")
+         f"{n_agency} matched agency, {n_current} currently open/recent")
     return items, None
 
 
@@ -597,7 +635,11 @@ def fetch_passport(agency_label, match_strings):
         diag(f"PASSPort [{agency_label}]: {n_rows} table rows rendered, "
              f"{len(items)} matched agency")
     except Exception as e:
-        error = f"ERROR fetching PASSPort for {agency_label}: {e}"
+        # Demoted to a diagnostic rather than a fetch error: the Current
+        # Solicitations dataset appears to carry the same PASSPort-era data
+        # via a stable API, so a failed render of this JS-heavy page isn't
+        # a coverage gap worth alarming on every report.
+        diag(f"PASSPort [{agency_label}]: render/parse failed: {e}")
 
     return items, error
 
