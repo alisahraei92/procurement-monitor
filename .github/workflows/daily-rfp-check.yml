@@ -5,7 +5,12 @@ on:
     # 12:00 UTC = 8:00 AM Eastern (7:00 AM during EDT). Adjust as you like —
     # cron is UTC regardless of your local time / DST.
     - cron: "0 12 * * *"
-  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      reset_state:
+        description: "Reset state (wipe seen/history — next run reports everything currently open as a fresh baseline)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # needed to commit the updated state file + report back
@@ -27,6 +32,13 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
+      - name: Reset state (if requested)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.reset_state }}
+        run: |
+          echo '{}' > state/seen_rfps.json
+          echo '[]' > state/history.json
+          echo "State reset — this run will report everything currently open as a fresh baseline."
+
       - name: Run monitor
         run: python monitor.py
 
@@ -38,8 +50,10 @@ jobs:
           git diff --staged --quiet || git commit -m "Daily RFP check: $(date -u +%Y-%m-%d)"
           git push
 
-      # Emails the day's report every run. Requires 3 repo secrets — see
-      # README "Set up the daily email" section for the 2-minute setup.
+      # Emails the day's report every run. The recipient is set below;
+      # the SENDER still requires 2 repo secrets (MAIL_USERNAME = the Gmail
+      # address to send from, MAIL_APP_PASSWORD = its Gmail app password).
+      # See README "Set up the daily email" for the 2-minute setup.
       - name: Email report
         uses: dawidd6/action-send-mail@v3
         with:
@@ -48,6 +62,6 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_APP_PASSWORD }}
           subject: "Daily RFP Report"
-          to: ${{ secrets.MAIL_TO }}
+          to: alisahraei92@gmail.com
           from: RFP Monitor
           body: file://reports/latest.md
