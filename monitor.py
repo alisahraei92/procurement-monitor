@@ -411,14 +411,25 @@ def fetch_city_record(agency_label, match_strings):
     all_rows = []
     errors = []
 
-    # Primary: broad recent pull (proven to contain current postings)
+    # Primary: broad recent pull. Ordered by start_date DESC — the field
+    # name is confirmed from live diagnostics samples (start_date/end_date/
+    # due_date, ISO format). Ordering by :id DESC (the old approach) was
+    # empirically dominated by 2011-2013 records; ordering by the actual
+    # posting date puts current notices at the front of the slice. Falls
+    # back to :id ordering if the server rejects the field name.
     try:
-        params = {"$limit": 5000, "$order": ":id DESC"}
+        params = {"$limit": 5000, "$order": "start_date DESC"}
         resp = _get(CITY_RECORD_BASE, params=params)
         resp.raise_for_status()
         all_rows.extend(resp.json())
-    except Exception as e:
-        errors.append(f"broad pull: {e}")
+    except Exception:
+        try:
+            params = {"$limit": 5000, "$order": ":id DESC"}
+            resp = _get(CITY_RECORD_BASE, params=params)
+            resp.raise_for_status()
+            all_rows.extend(resp.json())
+        except Exception as e:
+            errors.append(f"broad pull: {e}")
 
     # Supplement: targeted full-text searches
     for match in match_strings:
@@ -621,8 +632,15 @@ def fetch_passport(agency_label, match_strings):
             title = max(cells, key=len)
             if len(title) < 10:
                 continue
+            # Require an EPIN/solicitation-number-like pattern in the row.
+            # Real PASSPort solicitation rows carry an EPIN; page UI
+            # elements that render as table rows (e.g. the agency filter
+            # dropdown — a giant concatenation of every agency name, no
+            # digits) do not. This rejects those.
             epin = re.search(r"\b\d{5,}[A-Z]?\d*[A-Z0-9]*\b", " ".join(cells))
-            rid = epin.group(0) if epin else _stable_id(title, agency_label)
+            if not epin:
+                continue
+            rid = epin.group(0)
 
             items.append({
                 "id": rid,
