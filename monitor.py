@@ -220,12 +220,12 @@ def render_page(url, wait_ms=4000, wait_selector=None, timeout_ms=30000):
     outright — some of these sites may render an empty "no results" state
     that never adds the selector, which is a legitimate outcome, not an error.
 
-    Uses wait_until="domcontentloaded" rather than "networkidle": several
-    government sites keep a background connection open indefinitely
-    (analytics beacons, polling, etc.), so "networkidle" — wait for ALL
-    network activity to stop — reliably times out on them even once the
-    actual content has long since loaded. domcontentloaded + an explicit
-    settle wait is more reliable in practice.
+    Tries wait_until="domcontentloaded" first; if even that times out
+    (some sites are extremely slow to serve data-center IPs like GitHub
+    Actions runners, or hold the initial response open), retries once with
+    wait_until="commit" — which only waits for the response to START — and
+    then relies on the settle wait / selector wait to give content time to
+    arrive. Better a late page than a guaranteed timeout.
     """
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -234,7 +234,11 @@ def render_page(url, wait_ms=4000, wait_selector=None, timeout_ms=30000):
                 user_agent=USER_AGENT,
                 extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
             )
-            page.goto(url, timeout=timeout_ms, wait_until="domcontentloaded")
+            try:
+                page.goto(url, timeout=timeout_ms, wait_until="domcontentloaded")
+            except Exception:
+                # Retry with the loosest possible wait condition
+                page.goto(url, timeout=timeout_ms, wait_until="commit")
             if wait_selector:
                 try:
                     page.wait_for_selector(wait_selector, timeout=timeout_ms)
@@ -367,16 +371,30 @@ def fetch_city_record(agency_label, match_strings):
     """Pull City Record notices for one agency and keep only ones that look
     like a solicitation/RFP/bid and are still open (or recently posted).
 
-    Strategy: try Socrata full-text search ($q) scoped to each of the
-    agency's match strings first (fast, targeted, doesn't require knowing
-    the exact agency-name column). If that comes back completely empty —
-    which can happen if this dataset stores agency as a code/abbreviation
-    that doesn't literally contain any of our match strings — fall back to
-    a broad recent-rows pull and filter client-side instead, so a naming
-    mismatch doesn't silently produce zero results with no error either way.
+    Strategy: ALWAYS do the broad recent-rows pull (5000 rows ordered by
+    :id DESC) — this is empirically proven to contain current postings for
+    our agencies (verified against live data). The Socrata full-text $q
+    search per match string is run as a supplement to catch anything that
+    fell outside the broad slice. An earlier version used $q as the ONLY
+    method, and it silently missed current records the broad pull was
+    finding — whatever tokenization $q applies to this dataset does not
+    reliably match our agency name strings, so it must never be the sole
+    source again. Everything is merged, deduped, then filtered client-side
+    by agency match, solicitation keywords, and date relevance.
     """
     all_rows = []
     errors = []
+
+    # Primary: broad recent pull (proven to contain current postings)
+    try:
+        params = {"$limit": 5000, "$order": ":id DESC"}
+        resp = _get(CITY_RECORD_BASE, params=params)
+        resp.raise_for_status()
+        all_rows.extend(resp.json())
+    except Exception as e:
+        errors.append(f"broad pull: {e}")
+
+    # Supplement: targeted full-text searches
     for match in match_strings:
         try:
             params = {"$limit": 1000, "$q": match}
@@ -385,15 +403,6 @@ def fetch_city_record(agency_label, match_strings):
             all_rows.extend(resp.json())
         except Exception as e:
             errors.append(f"'{match}' search: {e}")
-
-    if not all_rows:
-        try:
-            params = {"$limit": 5000, "$order": ":id DESC"}
-            resp = _get(CITY_RECORD_BASE, params=params)
-            resp.raise_for_status()
-            all_rows = resp.json()
-        except Exception as e:
-            errors.append(f"fallback broad pull: {e}")
 
     if not all_rows:
         if errors:
