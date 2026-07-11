@@ -2047,6 +2047,96 @@
       "servicedepartment",
       "servicesboard",
       "supply"
+    ],
+    [
+      "assessment",
+      "environmental",
+      "hwearc05a",
+      "professional",
+      "projects",
+      "renewal",
+      "requirements"
+    ],
+    [
+      "co306ext2",
+      "courthouse",
+      "exterior",
+      "harlem",
+      "rehabilitation"
+    ],
+    [
+      "ada",
+      "library",
+      "upgrade",
+      "wakefield"
+    ],
+    [
+      "11224",
+      "1419",
+      "ave",
+      "brooklyn",
+      "clinic",
+      "community",
+      "equipment",
+      "furniture",
+      "health",
+      "hldnknchl",
+      "initial",
+      "initiatives",
+      "located",
+      "mermaid",
+      "outfitting",
+      "purchase"
+    ],
+    [
+      "11355",
+      "4500",
+      "boulevard",
+      "center",
+      "equipment",
+      "flushing",
+      "hlqnflus",
+      "hlqnfshmr",
+      "hospital",
+      "located",
+      "medical",
+      "parsons",
+      "purchase",
+      "systems",
+      "ultrasound"
+    ],
+    [
+      "ambulances",
+      "hatzoloh",
+      "hlhatzbk",
+      "incorporated",
+      "purchase"
+    ],
+    [
+      "correction",
+      "dot",
+      "engineering",
+      "inspection",
+      "lists",
+      "pre",
+      "resident"
+    ],
+    [
+      "county",
+      "courthouse",
+      "criminal",
+      "facade",
+      "queens",
+      "restoration",
+      "roof"
+    ],
+    [
+      "assurance",
+      "construction",
+      "hwcd101g",
+      "independent",
+      "materials",
+      "testing"
     ]
   ],
   "NYC EDC": [
@@ -7544,6 +7634,17 @@
       "sites",
       "smd",
       "unity"
+    ],
+    [
+      "centers",
+      "community",
+      "cornerstone",
+      "fy27",
+      "nae"
+    ],
+    [
+      "board",
+      "meetings"
     ]
   ]
 }
