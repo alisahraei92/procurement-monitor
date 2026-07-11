@@ -1,4 +1,4 @@
-# Daily RFP Report — 2026-07-08
+# Daily RFP Report — 2026-07-10
 
 No new postings found today across any tracked agency.
 
@@ -29,4 +29,4 @@ _No new postings._
 Call log:
   - navigating to "https://ddcrfpdocuments.nyc.gov/rfp/", waiting until "domcontentloaded"
 
-- ERROR fetching BPCA: 403 Client Error: Forbidden for url: https://bpca.ny.gov/apply/rfp-opp/
+- ERROR fetching City Record for NYC EDC: 'ECONOMIC DEVELOPMENT CORPORATION': HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=30)
