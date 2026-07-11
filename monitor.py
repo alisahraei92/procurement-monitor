@@ -85,6 +85,25 @@ AGENCIES_WITH_OWN_SITE = {"NYCHA", "NYC DDC", "NYC EDC", "NYC SCA"}
 
 CITY_RECORD_DETAIL_URL = "https://a856-cityrecord.nyc.gov/RequestDetail/{id}"
 
+# NYC Open Data "Current Solicitations" dataset — appears to be the
+# PASSPort-era current-solicitations listing. Queried alongside City Record
+# for all 5 NYC agencies; dedup handles the overlap.
+CURRENT_SOLICITATIONS_BASE = "https://data.cityofnewyork.us/resource/3khw-qi8f.json"
+
+# PASSPort Public — MOCS's no-login public browse of PASSPort solicitations.
+# NYC agencies (DDC explicitly, per their own RFP page) now release
+# solicitations through PASSPort, so this is a primary source, not a bonus.
+PASSPORT_PUBLIC_URL = "https://a0333-passportpublic.nyc.gov/rfx.html"
+
+# Per-run fetch diagnostics (source -> counts), included at the bottom of
+# every report so failures/filtering behavior are visible without needing
+# to reproduce runs locally.
+DIAGNOSTICS = []
+
+
+def diag(msg):
+    DIAGNOSTICS.append(msg)
+
 NYCHA_OWN_URL = "https://www.nyc.gov/site/nycha/business/procurement-opportunities.page"
 DDC_OWN_URL = "https://ddcrfpdocuments.nyc.gov/rfp/"
 EDC_OWN_URL = "https://edc.nyc/rfps"
@@ -409,6 +428,7 @@ def fetch_city_record(agency_label, match_strings):
             return [], f"ERROR fetching City Record for {agency_label}: {'; '.join(errors)}"
         return [], None
 
+    n_agency = n_keyword = n_date = 0
     items = []
     seen_rows = set()
     for row in all_rows:
@@ -420,10 +440,13 @@ def fetch_city_record(agency_label, match_strings):
         blob = " ".join(str(v) for v in row.values() if isinstance(v, str)).lower()
         if not _blob_matches(blob, match_strings):
             continue
+        n_agency += 1
         if not any(k in blob for k in SOLICITATION_KEYWORDS):
             continue
+        n_keyword += 1
         if not _is_currently_relevant(row, LOOKBACK_DAYS):
             continue
+        n_date += 1
 
         title = (
             row.get("short_title") or row.get("title") or row.get("description")
@@ -465,7 +488,118 @@ def fetch_city_record(agency_label, match_strings):
         seen_ids.add(it["id"])
         deduped.append(it)
 
+    diag(
+        f"City Record [{agency_label}]: {len(all_rows)} rows fetched, "
+        f"{n_agency} matched agency, {n_keyword} matched solicitation keywords, "
+        f"{n_date} passed date filter, {len(deduped)} after id-dedup"
+    )
     return deduped, None
+
+
+# --------------------------------------------------------------------------
+# Source: NYC Open Data "Current Solicitations" (PASSPort-era dataset)
+# --------------------------------------------------------------------------
+
+def fetch_current_solicitations(agency_label, match_strings):
+    """NYC Open Data's 'Current Solicitations' dataset (3khw-qi8f) — by its
+    name and description, a listing of currently-open solicitations, which
+    is exactly the shape we want (no date-filter gymnastics needed to weed
+    out decades of history, unlike City Record). Same client-side agency
+    matching as City Record; field names are matched loosely since the
+    schema wasn't verifiable at build time."""
+    try:
+        resp = _get(CURRENT_SOLICITATIONS_BASE, params={"$limit": 5000})
+        resp.raise_for_status()
+        rows = resp.json()
+    except Exception as e:
+        return [], f"ERROR fetching Current Solicitations for {agency_label}: {e}"
+
+    items = []
+    n_agency = 0
+    for row in rows:
+        blob = " ".join(str(v) for v in row.values() if isinstance(v, str)).lower()
+        if not _blob_matches(blob, match_strings):
+            continue
+        n_agency += 1
+
+        title = (
+            row.get("title") or row.get("short_title") or row.get("solicitation_title")
+            or row.get("description") or next(
+                (v for v in row.values() if isinstance(v, str) and len(v) > 15),
+                "Untitled solicitation",
+            )
+        )
+        rid = (row.get("pin") or row.get("epin") or row.get("id")
+               or _stable_id(title, agency_label))
+        date_field = (row.get("release_date") or row.get("start_date")
+                      or row.get("posted") or row.get("date") or "")
+        due_field = (row.get("due_date") or row.get("end_date")
+                     or row.get("deadline") or "")
+
+        items.append({
+            "id": str(rid),
+            "agency": agency_label,
+            "title": str(title).strip()[:300],
+            "date": str(date_field)[:10],
+            "due": str(due_field)[:10],
+            "url": "https://a0333-passportpublic.nyc.gov/rfx.html",
+            "source": "NYC Current Solicitations",
+        })
+
+    diag(f"Current Solicitations [{agency_label}]: {len(rows)} rows fetched, "
+         f"{n_agency} matched agency")
+    return items, None
+
+
+# --------------------------------------------------------------------------
+# Source: PASSPort Public (MOCS public browse of PASSPort RFx)
+# --------------------------------------------------------------------------
+
+def fetch_passport(agency_label, match_strings):
+    """PASSPort Public's RFx browse — no login required. NYC agencies now
+    release solicitations through PASSPort (DDC states this explicitly on
+    their own RFP page), making this a primary source. The page is a
+    client-rendered app, so it's rendered with headless Chromium and parsed
+    generically from table rows. An EPIN-style code in the row text is used
+    as the stable id where present."""
+    items = []
+    error = None
+    try:
+        html = render_page(PASSPORT_PUBLIC_URL, wait_ms=8000, wait_selector="table")
+        soup = BeautifulSoup(html, "html.parser")
+
+        rows = soup.select("table tr")
+        n_rows = 0
+        for row in rows:
+            cells = [c.get_text(strip=True) for c in row.find_all(["td", "th"])]
+            cells = [c for c in cells if c]
+            if len(cells) < 2:
+                continue
+            n_rows += 1
+            row_text = " ".join(cells).lower()
+            if not _blob_matches(row_text, match_strings):
+                continue
+
+            title = max(cells, key=len)
+            if len(title) < 10:
+                continue
+            epin = re.search(r"\b\d{5,}[A-Z]?\d*[A-Z0-9]*\b", " ".join(cells))
+            rid = epin.group(0) if epin else _stable_id(title, agency_label)
+
+            items.append({
+                "id": rid,
+                "agency": agency_label,
+                "title": title[:300],
+                "date": "",
+                "url": PASSPORT_PUBLIC_URL,
+                "source": "PASSPort Public",
+            })
+        diag(f"PASSPort [{agency_label}]: {n_rows} table rows rendered, "
+             f"{len(items)} matched agency")
+    except Exception as e:
+        error = f"ERROR fetching PASSPort for {agency_label}: {e}"
+
+    return items, error
 
 
 # --------------------------------------------------------------------------
@@ -511,7 +645,12 @@ def fetch_nycha_own():
             ]
 
         if not candidate_links:
-            error = "ERROR: NYCHA own-site page structure changed (no RFQ/RFP links found by heading or fallback scan)"
+            # Include a snippet of what the page actually contained so a
+            # failure is debuggable from the report alone (e.g. reveals a
+            # bot-check interstitial or redirect instead of the real page).
+            page_text = soup.get_text(" ", strip=True)[:300]
+            error = ("ERROR: NYCHA own-site: no RFQ/RFP links found. "
+                     f"Rendered page begins: \"{page_text}\"")
             return items, error
 
         for li in candidate_links:
@@ -850,6 +989,12 @@ def build_report(new_by_agency, errors, run_date):
             lines.append(f"- {e}")
         lines.append("")
 
+    if DIAGNOSTICS:
+        lines.append("## Diagnostics (for debugging — safe to ignore)")
+        for d in DIAGNOSTICS:
+            lines.append(f"- {d}")
+        lines.append("")
+
     return "\n".join(lines)
 
 
@@ -1171,13 +1316,23 @@ def main():
     new_by_agency = {}
     errors = []
 
-    # --- City Record agencies (+ own site for NYCHA/DDC/EDC) ---
+    # --- City Record + Current Solicitations + PASSPort (+ own site) ---
+    # PASSPort's browse page is rendered once and reused for all 5 agencies
+    # rather than re-rendered 5 times.
     for agency, match_strings in CITY_RECORD_AGENCIES.items():
         cr_items, err = fetch_city_record(agency, match_strings)
         if err:
             errors.append(err)
 
-        all_items = list(cr_items)
+        cs_items, cs_err = fetch_current_solicitations(agency, match_strings)
+        if cs_err:
+            errors.append(cs_err)
+
+        pp_items, pp_err = fetch_passport(agency, match_strings)
+        if pp_err:
+            errors.append(pp_err)
+
+        all_items = list(cr_items) + list(cs_items) + list(pp_items)
         if agency in AGENCIES_WITH_OWN_SITE:
             own_items, own_err = OWN_SITE_FETCHERS[agency]()
             if own_err:
