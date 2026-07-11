@@ -69,7 +69,7 @@ def test_dasny_parser():
 
 
 def test_bpca_parser():
-    with patch("monitor._get", return_value=FakeResponse(BPCA_HTML)):
+    with patch("monitor.render_page", return_value=BPCA_HTML):
         items, err = monitor.fetch_bpca()
     assert err is None, err
     titles = {i["title"] for i in items}
@@ -77,7 +77,48 @@ def test_bpca_parser():
     print("BPCA parser OK:", items)
 
 
+NYCHA_HTML_WITH_HEADING = """
+<html><body>
+<h2>2026 Proposer Pre-Bidders Conference Attendance List</h2>
+<ul>
+<li><a href="/downloads/pdf/rfq521185.pdf">RFQ #521185 - IDIQ Contract for Elevator Repair</a></li>
+<li><a href="/downloads/pdf/rfp515836.pdf">RFP #515836 - A/E and Local Law Inspection Services</a></li>
+</ul>
+</body></html>
+"""
+
+# Simulates the heading wording changing (e.g. year or phrasing drift) --
+# the fallback scan should still find the RFQ/RFP links directly.
+NYCHA_HTML_HEADING_CHANGED = """
+<html><body>
+<h2>2027 Current Solicitations</h2>
+<ul>
+<li><a href="/downloads/pdf/rfq999111.pdf">RFQ #999111 - Roof Replacement Citywide</a></li>
+</ul>
+</body></html>
+"""
+
+
+def test_nycha_parser_with_heading():
+    with patch("monitor.render_page", return_value=NYCHA_HTML_WITH_HEADING):
+        items, err = monitor.fetch_nycha_own()
+    assert err is None, err
+    ids = {i["id"] for i in items}
+    assert ids == {"521185", "515836"}, ids
+    print("NYCHA parser (heading path) OK:", items)
+
+
+def test_nycha_parser_fallback():
+    with patch("monitor.render_page", return_value=NYCHA_HTML_HEADING_CHANGED):
+        items, err = monitor.fetch_nycha_own()
+    assert err is None, err
+    assert len(items) == 1 and items[0]["id"] == "999111", items
+    print("NYCHA parser (fallback path) OK:", items)
+
+
 if __name__ == "__main__":
     test_dasny_parser()
     test_bpca_parser()
+    test_nycha_parser_with_heading()
+    test_nycha_parser_fallback()
     print("\nAll offline parser tests passed.")

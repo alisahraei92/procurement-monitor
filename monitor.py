@@ -70,11 +70,11 @@ REQUEST_TIMEOUT = 30
 # all their RFPs are published exclusively via City Record, so no separate
 # H+H source exists to add.
 CITY_RECORD_AGENCIES = {
-    "NYCHA": ["HOUSING AUTHORITY"],
-    "NYC SCA": ["SCHOOL CONSTRUCTION AUTHORITY"],
-    "NYC DDC": ["DESIGN AND CONSTRUCTION"],
-    "NYC EDC": ["ECONOMIC DEVELOPMENT CORPORATION"],
-    "NYC H+H": ["HEALTH AND HOSPITALS"],
+    "NYCHA": ["HOUSING AUTHORITY", "NYCHA"],
+    "NYC SCA": ["SCHOOL CONSTRUCTION AUTHORITY", "SCA"],
+    "NYC DDC": ["DESIGN AND CONSTRUCTION", "DDC"],
+    "NYC EDC": ["ECONOMIC DEVELOPMENT CORPORATION", "NYCEDC", "EDC"],
+    "NYC H+H": ["HEALTH AND HOSPITALS", "HHC", "H+H"],
 }
 
 # Agencies that have a second, agency-run source in addition to City Record.
@@ -134,6 +134,22 @@ def _get(url, **kwargs):
     headers = kwargs.pop("headers", {})
     headers.setdefault("User-Agent", USER_AGENT)
     return requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT, **kwargs)
+
+
+def _blob_matches(blob, match_strings):
+    """True if any match string is found in blob. Short strings (acronyms
+    like 'EDC', 'SCA' — 4 chars or less) are matched on word boundaries to
+    avoid false positives (e.g. 'EDC' inside an unrelated word); longer
+    phrases use a plain substring check since they're specific enough not
+    to need it."""
+    for m in match_strings:
+        ml = m.lower()
+        if len(ml) <= 4:
+            if re.search(r"\b" + re.escape(ml) + r"\b", blob):
+                return True
+        elif ml in blob:
+            return True
+    return False
 
 
 def _stable_id(*parts):
@@ -351,14 +367,13 @@ def fetch_city_record(agency_label, match_strings):
     """Pull City Record notices for one agency and keep only ones that look
     like a solicitation/RFP/bid and are still open (or recently posted).
 
-    Previous version pulled the 5000 most-recently-touched rows across the
-    ENTIRE city dataset (all agencies) and filtered client-side — which
-    meant a small agency's notices could easily fall outside that slice
-    entirely and silently show zero, with no error to explain why. This
-    uses Socrata's full-text search ($q) scoped to each agency's match
-    string instead, which searches every field server-side without needing
-    to know the exact agency-name column (schema names have drifted
-    before) — much higher chance of actually finding the agency's rows.
+    Strategy: try Socrata full-text search ($q) scoped to each of the
+    agency's match strings first (fast, targeted, doesn't require knowing
+    the exact agency-name column). If that comes back completely empty —
+    which can happen if this dataset stores agency as a code/abbreviation
+    that doesn't literally contain any of our match strings — fall back to
+    a broad recent-rows pull and filter client-side instead, so a naming
+    mismatch doesn't silently produce zero results with no error either way.
     """
     all_rows = []
     errors = []
@@ -369,7 +384,16 @@ def fetch_city_record(agency_label, match_strings):
             resp.raise_for_status()
             all_rows.extend(resp.json())
         except Exception as e:
-            errors.append(f"'{match}': {e}")
+            errors.append(f"'{match}' search: {e}")
+
+    if not all_rows:
+        try:
+            params = {"$limit": 5000, "$order": ":id DESC"}
+            resp = _get(CITY_RECORD_BASE, params=params)
+            resp.raise_for_status()
+            all_rows = resp.json()
+        except Exception as e:
+            errors.append(f"fallback broad pull: {e}")
 
     if not all_rows:
         if errors:
@@ -385,7 +409,7 @@ def fetch_city_record(agency_label, match_strings):
         seen_rows.add(row_key)
 
         blob = " ".join(str(v) for v in row.values() if isinstance(v, str)).lower()
-        if not any(m.lower() in blob for m in match_strings):
+        if not _blob_matches(blob, match_strings):
             continue
         if not any(k in blob for k in SOLICITATION_KEYWORDS):
             continue
@@ -460,18 +484,29 @@ def fetch_nycha_own():
             lambda tag: tag.name in ("h2", "h3")
             and "pre-bidders conference attendance list" in tag.get_text(strip=True).lower()
         )
-        if heading is None:
-            error = "ERROR: NYCHA own-site page structure changed (attendance-list heading not found)"
+
+        candidate_links = []
+        if heading is not None:
+            ul = heading.find_next("ul")
+            if ul is not None:
+                candidate_links = ul.find_all("li")
+
+        if not candidate_links:
+            # Fallback: the exact heading wording can drift (year changes,
+            # rewording) without the underlying RFQ/RFP links disappearing.
+            # Scan the whole page for anything matching "RFQ #12345 ..." /
+            # "RFP #12345 ..." link text instead of relying on a heading.
+            candidate_links = [
+                a for a in soup.find_all("a")
+                if re.match(r"\s*(RFQ|RFP|RFEI)\s*#\s*\d", a.get_text(strip=True))
+            ]
+
+        if not candidate_links:
+            error = "ERROR: NYCHA own-site page structure changed (no RFQ/RFP links found by heading or fallback scan)"
             return items, error
 
-        # The list is the next <ul> sibling after the heading
-        ul = heading.find_next("ul")
-        if ul is None:
-            error = "ERROR: NYCHA own-site page structure changed (list not found after heading)"
-            return items, error
-
-        for li in ul.find_all("li"):
-            a = li.find("a")
+        for li in candidate_links:
+            a = li.find("a") if li.name != "a" else li
             if not a:
                 continue
             text = a.get_text(strip=True)
@@ -509,11 +544,18 @@ def fetch_ddc_own():
     """DDC's RFP documents page lists open RFPs with a PIN, title, and
     posting date, but populates the Open/Closed tab content client-side —
     a plain HTTP fetch only sees an empty shell. Rendered with headless
-    Chromium first, then parsed the same way."""
+    Chromium first, then parsed the same way.
+
+    This source has been observed timing out even on domcontentloaded
+    (i.e. the connection itself is slow/unresponsive, not just JS-heavy) —
+    possibly this subdomain rate-limits or blocks traffic from data-center
+    IP ranges like GitHub Actions runners. Timeout raised to give it a fair
+    chance; if it keeps failing, City Record remains the backstop for DDC
+    regardless, so this isn't a silent gap."""
     items = []
     error = None
     try:
-        html = render_page(DDC_OWN_URL, wait_ms=5000)
+        html = render_page(DDC_OWN_URL, wait_ms=5000, timeout_ms=45000)
         soup = BeautifulSoup(html, "html.parser")
         text_blob = soup.get_text("\n", strip=True)
 
@@ -555,6 +597,15 @@ def fetch_edc_own():
 
         skip_slugs = {"rfps", "opportunity-mwdbe", "subcontractors-and-suppliers",
                       "upcoming-procurement-opportunities", "vendor-resources"}
+        # Generic hub/informational pages that happen to contain "rfp" etc.
+        # in their URL slug or boilerplate copy, but aren't an actual
+        # solicitation (e.g. "Join NYCEDC's Vendors List for Contracting
+        # Opportunities" — a general vendor-registration page, not an RFP).
+        EXCLUDE_PHRASES = re.compile(
+            r"vendors?\s*list|become a vendor|vendor registration|"
+            r"how to do business|mwbe program|supplier diversity",
+            re.I,
+        )
         seen_slugs = set()
         for a in soup.select("a[href]"):
             href = a.get("href", "")
@@ -566,6 +617,8 @@ def fetch_edc_own():
                 continue
             text = a.get_text(strip=True)
             if len(text) < 8 or not re.search(r"rfp|rfq|rfei|proposal", text + " " + slug, re.I):
+                continue
+            if EXCLUDE_PHRASES.search(text):
                 continue
             seen_slugs.add(slug)
             items.append({
@@ -704,12 +757,16 @@ def fetch_dasny():
 # --------------------------------------------------------------------------
 
 def fetch_bpca():
+    """Uses render_page() rather than plain requests.get — bpca.ny.gov has
+    started returning 403 Forbidden to plain HTTP requests from a
+    data-center IP (same pattern observed on nyc.gov / NYCHA), even though
+    this page itself needs no JavaScript. A real browser fingerprint gets
+    through where a bare requests.get gets blocked."""
     items = []
     error = None
     try:
-        resp = _get(BPCA_URL)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
+        html = render_page(BPCA_URL, wait_ms=2000)
+        soup = BeautifulSoup(html, "html.parser")
 
         # BPCA's page is a flat list of bolded project-title links (PDFs) under
         # "Current Procurement Opportunities", grouped by project. We treat
