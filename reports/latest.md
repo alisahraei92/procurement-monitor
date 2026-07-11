@@ -24,9 +24,12 @@ _No new postings._
 _No new postings._
 
 ## Fetch errors
-- ERROR: NYCHA own-site page structure changed (attendance-list heading not found)
-- ERROR fetching City Record for NYC SCA: 'SCHOOL CONSTRUCTION AUTHORITY': HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=30)
-- ERROR fetching DDC own site: Page.goto: Timeout 30000ms exceeded.
+- ERROR: NYCHA own-site page structure changed (no RFQ/RFP links found by heading or fallback scan)
+- ERROR fetching SCA own site: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://scainfohub.azurewebsites.net/advertised-bids", waiting until "domcontentloaded"
+
+- ERROR fetching DDC own site: Page.goto: Timeout 45000ms exceeded.
 Call log:
   - navigating to "https://ddcrfpdocuments.nyc.gov/rfp/", waiting until "domcontentloaded"
 
