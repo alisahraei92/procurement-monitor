@@ -830,5 +830,18 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/opwdd-sunmount-ddso-upgrade-electronic-security-systems",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-07-11"
+  },
+  {
+    "id": "20260706028",
+    "agency": "NYCHA",
+    "title": "SMD_PS_RFQ_523221_ Monochloramine Disinfection Systems",
+    "date": "2026-07-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260706028",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-13"
   }
 ]
