@@ -1,9 +1,14 @@
 # Daily RFP Report — 2026-07-14
 
-# New — posted in the last day (1)
+# New — posted in the last day (4)
 
-## NYCHA (1)
+## NYCHA (3)
+- [SMD_A&CM_RFQ #521210 - Design-Build Services for In-Unit Renovations at Citywide Locations](https://a856-cityrecord.nyc.gov/RequestDetail/20260630022) (Posted: 2026-07-14, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Property and Terrorism Insurance](https://a856-cityrecord.nyc.gov/RequestDetail/20260319023) (Posted: 2026-07-14, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_PS_RFQ_523221_ Monochloramine Disinfection Systems](https://a856-cityrecord.nyc.gov/RequestDetail/20260706028) (Posted: 2026-07-13, seen on: NYC City Record Online + NYC Current Solicitations)
+
+## NYC EDC (1)
+- [Ideas for Impact RFEI](https://edc.nyc/ideas-impact-rfei)
 
 # Posted in the last week (10)
 
@@ -14,18 +19,20 @@
 - [SMPD_MATERIALS_ Various Plumbing Items such as nipples, stem trap, gasket, flanges](https://a856-cityrecord.nyc.gov/RequestDetail/20260629002) (Posted: 2026-07-07, seen on: NYC City Record Online + NYC Current Solicitations)
 
 ## NYC DDC (4)
-- [EC-SEQS27 - RECONSTRUCTION OF EXISTING SEWERS, SOUTH QUEENS](https://a856-cityrecord.nyc.gov/RequestDetail/20260629043) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
-- [SE-885 - Trunk Sewer & Outfall at Bergen Basin for the 150th Street Trunk Sewer which shares an Outfall with the GUY R BREWER Trunk sewer](https://a856-cityrecord.nyc.gov/RequestDetail/20260625051) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
 - [HWEARC05A, Renewal of Requirements Contracts for Professional Services for Environmental Assessment for Various Projects, Citywide](https://a856-cityrecord.nyc.gov/RequestDetail/20260706008) (Posted: 2026-07-10)
 - [CO306EXT2 Harlem Courthouse Exterior Rehabilitation](https://a856-cityrecord.nyc.gov/RequestDetail/20260706007) (Posted: 2026-07-10)
+- [SE-885 - Trunk Sewer & Outfall at Bergen Basin for the 150th Street Trunk Sewer which shares an Outfall with the GUY R BREWER Trunk sewer](https://a856-cityrecord.nyc.gov/RequestDetail/20260625051) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
+- [EC-SEQS27 - RECONSTRUCTION OF EXISTING SEWERS, SOUTH QUEENS](https://a856-cityrecord.nyc.gov/RequestDetail/20260629043) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
 
 ## NYC EDC (2)
 - [COMPASS School Based](https://a856-cityrecord.nyc.gov/RequestDetail/20260701026) (Posted: 2026-07-09)
-- [Outside Land Use & Zoning Counsel with respect to the Science Park & Research Campus (SPARC) Kips Bay Project](https://a856-cityrecord.nyc.gov/RequestDetail/20260701042) (Posted: 2026-07-09, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Outside Land Use & Zoning Counsel with respect to the Science Park & Research Campus (SPARC) Kips Bay Project](https://a856-cityrecord.nyc.gov/RequestDetail/20260701042) (Posted: 2026-07-09, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
 
-# All currently open (62 across all agencies)
+# All currently open (64 across all agencies)
 
-## NYCHA (22 open)
+## NYCHA (23 open)
+- [SMD_A&CM_RFQ #521210 - Design-Build Services for In-Unit Renovations at Citywide Locations](https://a856-cityrecord.nyc.gov/RequestDetail/20260630022) (Posted: 2026-07-14, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Property and Terrorism Insurance](https://a856-cityrecord.nyc.gov/RequestDetail/20260319023) (Posted: 2026-07-14, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_PS_RFQ_523221_ Monochloramine Disinfection Systems](https://a856-cityrecord.nyc.gov/RequestDetail/20260706028) (Posted: 2026-07-13, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Requirement Contract for Installation of V/C Floor Tile in Apartments- Development Name, Located in Manhattan Neighborhood (MN04), and (MN05), Manhattan.](https://a856-cityrecord.nyc.gov/RequestDetail/20260629032) (Posted: 2026-07-08, seen on: NYC City Record Online + NYC Current Solicitations)
 - [FY27 Cornerstone Community Centers NAE](https://a856-cityrecord.nyc.gov/RequestDetail/20260701009) (Posted: 2026-07-08)
@@ -34,11 +41,10 @@
 - [SMD_A&CM_RFQ #340881 - Senior Center Renovation at Dyckman Houses](https://a856-cityrecord.nyc.gov/RequestDetail/20260610071) (Posted: 2026-06-30, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_A&CM_RFQ #517992 - Elevator Rehabilitation and Maintenance and Service at Gun Hill Houses](https://a856-cityrecord.nyc.gov/RequestDetail/20260617050) (Posted: 2026-06-30, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMPD HARDWARE DOOR HINGES](https://a856-cityrecord.nyc.gov/RequestDetail/20260623049) (Posted: 2026-06-30, seen on: NYC City Record Online + NYC Current Solicitations)
-- [SMD_A&CM_RFQ #522185 - Design-Build Services for In-Unit Renovations at Douglass I & II Developments (Northern Manhattan)](https://a856-cityrecord.nyc.gov/RequestDetail/20260623056) (Posted: 2026-06-30, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_A&CM_RFQ #518094 Community Center Renovations Doors and Windows Replacement at Stanley Isaacs Houses](https://a856-cityrecord.nyc.gov/RequestDetail/20260611065) (Posted: 2026-06-25, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Bid Extension: SMPD MATERIALS ELECTRICAL LAMPS](https://a856-cityrecord.nyc.gov/RequestDetail/20260617049) (Posted: 2026-06-25, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_PS_RFP_521120_ Outreach Services Inside Residential Buildings](https://a856-cityrecord.nyc.gov/RequestDetail/20260615066) (Posted: 2026-06-23, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Correction: SM-Requirement Contract for Installation of V/C Floor Tile in Apartments- Bronx River, Monroe, Justice Sotomayor, Millbrook, Mitchell, Mott Haven, Patterson Houses, located in Bronx Neighborhood (BX03) and (BX04), Bronx.](https://a856-cityrecord.nyc.gov/RequestDetail/20260615060) (Posted: 2026-06-22, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Bid Extension: SM-Requirement Contract for Installation of V/C Floor Tile in Apartments- Bronx River, Monroe, Justice Sotomayor, Millbrook, Mitchell, Mott Haven, Patterson Houses, located in Bronx Neighborhood (BX03) and (BX04), Bronx.](https://a856-cityrecord.nyc.gov/RequestDetail/20260615060) (Posted: 2026-06-22, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_A&CM_RFQ #511469 - COMMUNITY CENTER UPGRADE - MOTT HAVEN HOUSES](https://a856-cityrecord.nyc.gov/RequestDetail/20260605051) (Posted: 2026-06-18, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SMD_A&CM_RFQ #517993 - Elevator Rehabilitation at Surfside Gardens](https://a856-cityrecord.nyc.gov/RequestDetail/20260612001) (Posted: 2026-06-18, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Bid Extension: SMPD _Material_Audio Video Equipment](https://a856-cityrecord.nyc.gov/RequestDetail/20260610062) (Posted: 2026-06-17, seen on: NYC City Record Online + NYC Current Solicitations)
@@ -53,10 +59,10 @@
 _None found._
 
 ## NYC DDC (13 open)
-- [EC-SEQS27 - RECONSTRUCTION OF EXISTING SEWERS, SOUTH QUEENS](https://a856-cityrecord.nyc.gov/RequestDetail/20260629043) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
-- [SE-885 - Trunk Sewer & Outfall at Bergen Basin for the 150th Street Trunk Sewer which shares an Outfall with the GUY R BREWER Trunk sewer](https://a856-cityrecord.nyc.gov/RequestDetail/20260625051) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
 - [HWEARC05A, Renewal of Requirements Contracts for Professional Services for Environmental Assessment for Various Projects, Citywide](https://a856-cityrecord.nyc.gov/RequestDetail/20260706008) (Posted: 2026-07-10)
 - [CO306EXT2 Harlem Courthouse Exterior Rehabilitation](https://a856-cityrecord.nyc.gov/RequestDetail/20260706007) (Posted: 2026-07-10)
+- [SE-885 - Trunk Sewer & Outfall at Bergen Basin for the 150th Street Trunk Sewer which shares an Outfall with the GUY R BREWER Trunk sewer](https://a856-cityrecord.nyc.gov/RequestDetail/20260625051) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
+- [EC-SEQS27 - RECONSTRUCTION OF EXISTING SEWERS, SOUTH QUEENS](https://a856-cityrecord.nyc.gov/RequestDetail/20260629043) (Posted: 2026-07-10, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Wakefield Library ADA Upgrade](https://a856-cityrecord.nyc.gov/RequestDetail/20260629005) (Posted: 2026-07-06)
 - [SMD_A&CM_RFQ #522185 - Design-Build Services for In-Unit Renovations at Douglass I & II Developments (Northern Manhattan)](https://a856-cityrecord.nyc.gov/RequestDetail/20260623056) (Posted: 2026-06-30, seen on: NYC City Record Online + NYC Current Solicitations)
 - [85026I0004-LQSHRN-23 - CM-Build, South Hollis Library Renovation RFQ](https://a856-cityrecord.nyc.gov/RequestDetail/20260618029) (Posted: 2026-06-29, seen on: NYC City Record Online + NYC Current Solicitations)
@@ -70,15 +76,16 @@ _None found._
 ## BPCA (0 open)
 _None found._
 
-## NYC EDC (8 open)
+## NYC EDC (9 open)
 - [COMPASS School Based](https://a856-cityrecord.nyc.gov/RequestDetail/20260701026) (Posted: 2026-07-09)
-- [Outside Land Use & Zoning Counsel with respect to the Science Park & Research Campus (SPARC) Kips Bay Project](https://a856-cityrecord.nyc.gov/RequestDetail/20260701042) (Posted: 2026-07-09, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Retainer Audit Services for Audit of Certain Revenue Sharing and Other Provisions in NYCEDC Managed Real Estate Agreements RFP](https://a856-cityrecord.nyc.gov/RequestDetail/20260625058) (Posted: 2026-07-06, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Affordable Housing Insurance Program RFEI](https://a856-cityrecord.nyc.gov/RequestDetail/20260616061) (Posted: 2026-06-24, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Consultant Services, On-Call General Marine Contractor Services for Maintenance, Repair, and Emergency Services at Various Sites RFP](https://a856-cityrecord.nyc.gov/RequestDetail/20260612040) (Posted: 2026-06-22, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Outside Land Use & Zoning Counsel with respect to the Science Park & Research Campus (SPARC) Kips Bay Project](https://a856-cityrecord.nyc.gov/RequestDetail/20260701042) (Posted: 2026-07-09, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
+- [Retainer Audit Services for Audit of Certain Revenue Sharing and Other Provisions in NYCEDC Managed Real Estate Agreements RFP](https://a856-cityrecord.nyc.gov/RequestDetail/20260625058) (Posted: 2026-07-06, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
+- [Affordable Housing Insurance Program RFEI](https://a856-cityrecord.nyc.gov/RequestDetail/20260616061) (Posted: 2026-06-24, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
+- [Consultant Services, On-Call General Marine Contractor Services for Maintenance, Repair, and Emergency Services at Various Sites RFP](https://a856-cityrecord.nyc.gov/RequestDetail/20260612040) (Posted: 2026-06-22, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
 - [Event Operator Services for 1680 Lexington Avenue Event Space RFP](https://a856-cityrecord.nyc.gov/RequestDetail/20260610061) (Posted: 2026-06-17, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Manhattan Cruise Terminal Community Fund Administrator](https://a856-cityrecord.nyc.gov/RequestDetail/20260609058) (Posted: 2026-06-16, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Maritime Operators, Electric Barge Service Between Brooklyn Marine Terminal and Hunts Point Marine Terminal](https://a856-cityrecord.nyc.gov/RequestDetail/20260507029) (Posted: 2026-05-14, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Manhattan Cruise Terminal Community Fund Administrator](https://a856-cityrecord.nyc.gov/RequestDetail/20260609058) (Posted: 2026-06-16, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
+- [Maritime Operators, Electric Barge Service Between Brooklyn Marine Terminal and Hunts Point Marine Terminal](https://a856-cityrecord.nyc.gov/RequestDetail/20260507029) (Posted: 2026-05-14, seen on: NYC City Record Online + NYC Current Solicitations + EDC RFPs)
+- [Ideas for Impact RFEI](https://edc.nyc/ideas-impact-rfei)
 
 ## DASNY (14 open)
 - [CNY Psychiatric Center – Furnish, Deliver and Setup Hospital Beds](https://www.dasny.org/opportunities/rfps-bids/2026/cny-psychiatric-center-furnish-deliver-and-setup-hospital-beds) (Posted: 07/02/2026, Due: 07/24/2026 - 2:30 PM)
@@ -97,26 +104,26 @@ _None found._
 - [OPWDD Sunmount DDSO Upgrade Electronic Security Systems](https://www.dasny.org/opportunities/rfps-bids/2026/opwdd-sunmount-ddso-upgrade-electronic-security-systems) (Posted: 05/12/2026, Due: 07/14/2026 - 2:00 PM)
 
 ## NYC H+H (5 open)
-- [Elmhurst Hospital, Entryway Renovation](https://a856-cityrecord.nyc.gov/RequestDetail/20260625055) (Posted: 2026-07-02, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Correction: Elmhurst Hospital, Entryway Renovation](https://a856-cityrecord.nyc.gov/RequestDetail/20260625055) (Posted: 2026-07-02, seen on: NYC City Record Online + NYC Current Solicitations)
 - [48202205 / 72202001: NYC H+H Woodhull - OTxHU Early Work 1/1B Exterior Work, Lower Cooling Tower, and Upper Cooling Tower](https://a856-cityrecord.nyc.gov/RequestDetail/20260618001) (Posted: 2026-06-26, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Correction: 48202205/72202001: Woodhull Outposted Therapeutic Housing Units (OTxHU) Main Construction](https://a856-cityrecord.nyc.gov/RequestDetail/20260624027) (Posted: 2026-06-26, seen on: NYC City Record Online + NYC Current Solicitations)
 - [13202301: Harlem Community Retail Pharmacy](https://a856-cityrecord.nyc.gov/RequestDetail/20260603051) (Posted: 2026-06-22, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Correction: NCB OTXHU Phase 2 Decanting](https://a856-cityrecord.nyc.gov/RequestDetail/20260401046) (Posted: 2026-04-08, seen on: NYC City Record Online + NYC Current Solicitations)
 
 ## Diagnostics (for debugging — safe to ignore)
-- City Record [NYCHA]: 7000 rows fetched, 1090 matched agency, 737 matched solicitation keywords, 25 passed date filter, 25 after id-dedup
-- Current Solicitations [NYCHA]: 5000 rows fetched, 822 matched agency, 23 currently open/recent
+- City Record [NYCHA]: 7000 rows fetched, 1186 matched agency, 812 matched solicitation keywords, 27 passed date filter, 27 after id-dedup
+- Current Solicitations [NYCHA]: 5000 rows fetched, 822 matched agency, 25 currently open/recent
 - PASSPort [NYCHA]: 0 table rows rendered, 0 matched agency
-- City Record [NYC SCA]: 7000 rows fetched, 1396 matched agency, 1298 matched solicitation keywords, 0 passed date filter, 0 after id-dedup
+- City Record [NYC SCA]: 7000 rows fetched, 1385 matched agency, 1254 matched solicitation keywords, 0 passed date filter, 0 after id-dedup
 - City Record [NYC SCA] sample date fields: {"start_date": "2026-06-08T00:00:00.000", "end_date": "2026-06-08T00:00:00.000", "due_date": "2026-06-18T10:00:00.000"}
 - Current Solicitations [NYC SCA]: 5000 rows fetched, 316 matched agency, 0 currently open/recent
 - PASSPort [NYC SCA]: 0 table rows rendered, 0 matched agency
-- City Record [NYC DDC]: 7000 rows fetched, 1810 matched agency, 718 matched solicitation keywords, 17 passed date filter, 17 after id-dedup
+- City Record [NYC DDC]: 7000 rows fetched, 1819 matched agency, 716 matched solicitation keywords, 17 passed date filter, 17 after id-dedup
 - Current Solicitations [NYC DDC]: 5000 rows fetched, 397 matched agency, 31 currently open/recent
 - PASSPort [NYC DDC]: 0 table rows rendered, 0 matched agency
-- City Record [NYC EDC]: 7230 rows fetched, 1446 matched agency, 884 matched solicitation keywords, 8 passed date filter, 8 after id-dedup
+- City Record [NYC EDC]: 7230 rows fetched, 1446 matched agency, 882 matched solicitation keywords, 8 passed date filter, 8 after id-dedup
 - Current Solicitations [NYC EDC]: 5000 rows fetched, 199 matched agency, 7 currently open/recent
 - PASSPort [NYC EDC]: 0 table rows rendered, 0 matched agency
-- City Record [NYC H+H]: 7569 rows fetched, 617 matched agency, 596 matched solicitation keywords, 5 passed date filter, 5 after id-dedup
+- City Record [NYC H+H]: 7569 rows fetched, 613 matched agency, 593 matched solicitation keywords, 5 passed date filter, 5 after id-dedup
 - Current Solicitations [NYC H+H]: 5000 rows fetched, 181 matched agency, 5 currently open/recent
 - PASSPort [NYC H+H]: 0 table rows rendered, 0 matched agency

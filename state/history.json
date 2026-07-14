@@ -843,5 +843,30 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-07-13"
+  },
+  {
+    "id": "20260319023",
+    "agency": "NYCHA",
+    "title": "Property and Terrorism Insurance",
+    "date": "2026-07-14",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260319023",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-14"
+  },
+  {
+    "id": "ideas-impact-rfei",
+    "agency": "NYC EDC",
+    "title": "Ideas for Impact RFEI",
+    "date": "",
+    "url": "https://edc.nyc/ideas-impact-rfei",
+    "source": "EDC RFPs",
+    "sources": [
+      "EDC RFPs"
+    ],
+    "found_date": "2026-07-14"
   }
 ]
