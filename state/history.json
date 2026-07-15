@@ -868,5 +868,30 @@
       "EDC RFPs"
     ],
     "found_date": "2026-07-14"
+  },
+  {
+    "id": "20260709004",
+    "agency": "NYC DDC",
+    "title": "Degraw Firehouse Renovation",
+    "date": "2026-07-15",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260709004",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-07-15"
+  },
+  {
+    "id": "20260708024",
+    "agency": "NYC DDC",
+    "title": "85026I0005-LBC21MNRF, CM-Build for Macon Library",
+    "date": "2026-07-15",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260708024",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-15"
   }
 ]
