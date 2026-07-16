@@ -893,5 +893,40 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-07-15"
+  },
+  {
+    "id": "20260709021",
+    "agency": "NYC DDC",
+    "title": "HRQNCHQB, the purchase of one 26-ft Refrigerated Food Truck for City Harvest, Inc.",
+    "date": "2026-07-16",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260709021",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-07-16"
+  },
+  {
+    "id": "20260710005",
+    "agency": "NYC DDC",
+    "title": "EC-SEKN26 (REBID1) RECONSTRUCTION OF EXISTING SEWERS, North Brooklyn",
+    "date": "2026-07-16",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260710005",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-07-16"
+  },
+  {
+    "id": "3726909999",
+    "agency": "DASNY",
+    "title": "OMH Rockland Psychiatric Center Renovate Nursing Cores Buildings 58 & 60 & Associated Asbestos Abatement",
+    "date": "07/15/2026",
+    "due": "08/27/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/index.php/opportunities/rfps-bids/2026/omh-rockland-psychiatric-center-renovate-nursing-cores-buildings-58-60",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-07-16"
   }
 ]
