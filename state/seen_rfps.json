@@ -192,6 +192,21 @@
       "psychiatric",
       "renovate",
       "rockland"
+    ],
+    [
+      "associated",
+      "college",
+      "cuny",
+      "eoi",
+      "food",
+      "hall",
+      "hazmat",
+      "lab",
+      "queens",
+      "removal",
+      "remsen",
+      "renovation",
+      "science"
     ]
   ],
   "NYC DDC": [
@@ -407,6 +422,18 @@
       "reconstruction",
       "sekn26",
       "sewers"
+    ],
+    [
+      "121",
+      "170",
+      "co306ext2",
+      "court",
+      "east",
+      "harlem",
+      "house",
+      "inspections",
+      "special",
+      "street"
     ]
   ],
   "NYC EDC": [
@@ -814,6 +841,12 @@
       "insurance",
       "property",
       "terrorism"
+    ],
+    [
+      "locks",
+      "material",
+      "mortise",
+      "smpd"
     ]
   ]
 }
