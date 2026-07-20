@@ -986,5 +986,29 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-brooklyn-college-campus-4-buildings-heating-plant-fire-pump",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-07-18"
+  },
+  {
+    "id": "20260713037",
+    "agency": "NYC EDC",
+    "title": "B-East RFP",
+    "date": "2026-07-20",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260713037",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-20"
+  },
+  {
+    "id": "374120",
+    "agency": "DASNY",
+    "title": "OASAS Dick Van Dyke Addiction Treatment Center Kitchen and Dining Room Addition Including Asbestos Abatement (EOI)",
+    "date": "07/20/2026",
+    "due": "08/17/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/oasas-dick-van-dyke-addiction-treatment-center-kitchen-and-dining-room",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-07-20"
   }
 ]
