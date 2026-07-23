@@ -1034,5 +1034,31 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-new-york-city-college-technology-namm-building-hot-water-0",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-07-22"
+  },
+  {
+    "id": "20260714017",
+    "agency": "NYCHA",
+    "title": "SMPD_MATERIALS_ELEVATOR Replacement Parts",
+    "date": "2026-07-23",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260714017",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-23"
+  },
+  {
+    "id": "20260717002",
+    "agency": "NYC SCA",
+    "title": "RFP 27-00004R - ERC-IEH Services in Connection with Environmental QA/QC Consulting Services",
+    "date": "2026-07-23",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260717002",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-23"
   }
 ]

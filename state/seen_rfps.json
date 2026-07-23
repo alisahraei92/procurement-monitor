@@ -649,7 +649,16 @@
       "phase"
     ]
   ],
-  "NYC SCA": [],
+  "NYC SCA": [
+    [
+      "00004r",
+      "connection",
+      "consulting",
+      "environmental",
+      "erc",
+      "ieh"
+    ]
+  ],
   "NYCHA": [
     [
       "apartments",
@@ -925,6 +934,13 @@
       "locks",
       "material",
       "mortise",
+      "smpd"
+    ],
+    [
+      "elevator",
+      "materials",
+      "parts",
+      "replacement",
       "smpd"
     ]
   ]
