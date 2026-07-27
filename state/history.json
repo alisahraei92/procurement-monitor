@@ -1096,5 +1096,31 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-07-24"
+  },
+  {
+    "id": "20260720019",
+    "agency": "NYC EDC",
+    "title": "N.Y.C. Groceries Operator(s)",
+    "date": "2026-07-27",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260720019",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-27"
+  },
+  {
+    "id": "20260723025",
+    "agency": "NYC H+H",
+    "title": "24202204-A: NYC H+H / North Central Bronx OTxHU Decant Ph. II",
+    "date": "2026-07-27",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260723025",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-07-27"
   }
 ]

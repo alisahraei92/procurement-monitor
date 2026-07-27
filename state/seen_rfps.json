@@ -639,6 +639,10 @@
       "education",
       "life",
       "sciences"
+    ],
+    [
+      "groceries",
+      "operator"
     ]
   ],
   "NYC H+H": [
@@ -687,6 +691,14 @@
       "ncb",
       "otxhu",
       "phase"
+    ],
+    [
+      "24202204",
+      "bronx",
+      "central",
+      "decant",
+      "north",
+      "otxhu"
     ]
   ],
   "NYC SCA": [
