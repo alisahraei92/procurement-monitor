@@ -277,6 +277,21 @@
       "system",
       "technology",
       "water"
+    ],
+    [
+      "action",
+      "center",
+      "contaminated",
+      "day",
+      "ddso",
+      "disposal",
+      "gowanda",
+      "habilitation",
+      "opwdd",
+      "remedial",
+      "removal",
+      "soils",
+      "western"
     ]
   ],
   "NYC DDC": [
@@ -1023,6 +1038,15 @@
       "idiq",
       "maintenance",
       "repair",
+      "smd"
+    ],
+    [
+      "518124",
+      "correction",
+      "elevator",
+      "houses",
+      "marcy",
+      "rehabilitation",
       "smd"
     ]
   ]

@@ -1161,5 +1161,29 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-07-31"
+  },
+  {
+    "id": "20260723001",
+    "agency": "NYCHA",
+    "title": "Correction: SMD_A&CM_RFQ #518124 - Elevator Rehabilitation at Marcy Houses",
+    "date": "2026-07-31",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260723001",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-01"
+  },
+  {
+    "id": "374680",
+    "agency": "DASNY",
+    "title": "OPWDD Western NY DDSO Gowanda Day Habilitation Center Remedial Action for Removal and Disposal of Contaminated Soils",
+    "date": "07/30/2026",
+    "due": "08/20/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/opwdd-western-ny-ddso-gowanda-day-habilitation-center-remedial-action",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-08-01"
   }
 ]
