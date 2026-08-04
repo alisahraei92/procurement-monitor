@@ -559,6 +559,31 @@
       "purchase",
       "pwdohel",
       "street"
+    ],
+    [
+      "accurate",
+      "across",
+      "agency",
+      "budget",
+      "capital",
+      "complete",
+      "continuity",
+      "ddcs",
+      "ensure",
+      "essential",
+      "estimating",
+      "execution",
+      "features",
+      "functions",
+      "license",
+      "licenses",
+      "plus",
+      "projects",
+      "subscription",
+      "suite",
+      "support",
+      "these",
+      "timely"
     ]
   ],
   "NYC EDC": [
@@ -714,6 +739,12 @@
       "decant",
       "north",
       "otxhu"
+    ],
+    [
+      "hazardous",
+      "hhc",
+      "materials",
+      "ppe"
     ]
   ],
   "NYC SCA": [
@@ -1048,6 +1079,14 @@
       "marcy",
       "rehabilitation",
       "smd"
+    ],
+    [
+      "fire",
+      "inspections",
+      "sprinkler",
+      "standpipe",
+      "systems",
+      "visual"
     ]
   ]
 }

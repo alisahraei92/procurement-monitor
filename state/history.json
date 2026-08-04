@@ -1185,5 +1185,42 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/opwdd-western-ny-ddso-gowanda-day-habilitation-center-remedial-action",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-08-01"
+  },
+  {
+    "id": "20260721001",
+    "agency": "NYCHA",
+    "title": "Visual Inspections of Fire Standpipe and Sprinkler Systems",
+    "date": "2026-08-04",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260721001",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-04"
+  },
+  {
+    "id": "20260721022",
+    "agency": "NYC DDC",
+    "title": "Complete Plus License Subscription suite features essential to DDCs estimating and budget functions. These 11 licenses ensure continuity, and support the timely and accurate execution of capital projects across the agency",
+    "date": "2026-08-04",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260721022",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-04"
+  },
+  {
+    "id": "20260729001",
+    "agency": "NYC H+H",
+    "title": "Hazardous Materials PPE-HHC",
+    "date": "2026-08-04",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260729001",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-04"
   }
 ]
