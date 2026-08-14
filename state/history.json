@@ -1385,5 +1385,31 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-08-13"
+  },
+  {
+    "id": "20260804038",
+    "agency": "NYC H+H",
+    "title": "NCB-24201901-Facade Restoration, Window and Storefront Replacement",
+    "date": "2026-08-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260804038",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-14"
+  },
+  {
+    "id": "11202201",
+    "agency": "NYC H+H",
+    "title": "FIRE ALARM REPLACEMENT AT BELLEVUE HOSPITAL CENTER",
+    "date": "2026-08-14",
+    "due": "2026-09-16",
+    "url": "https://a0333-passportpublic.nyc.gov/rfx.html",
+    "source": "NYC Current Solicitations",
+    "sources": [
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-14"
   }
 ]
