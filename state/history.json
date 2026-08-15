@@ -1411,5 +1411,44 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-08-14"
+  },
+  {
+    "id": "20260810049",
+    "agency": "NYC DDC",
+    "title": "PV279ACON New York City Center Chiller Replacement",
+    "date": "2026-08-14",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260810049",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-15"
+  },
+  {
+    "id": "20260810048",
+    "agency": "NYC DDC",
+    "title": "ACEDCA215 Brooklyn Children\u001as Museum HVAC Upgrade",
+    "date": "2026-08-14",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260810048",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-15"
+  },
+  {
+    "id": "20260810046",
+    "agency": "NYC DDC",
+    "title": "HH112CGIU Keener Building - Charles Gay Annex Fire Alarm & Emergency Lighting Upgrade",
+    "date": "2026-08-14",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260810046",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-15"
   }
 ]
