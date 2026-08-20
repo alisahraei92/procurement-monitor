@@ -1476,5 +1476,54 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-08-19"
+  },
+  {
+    "id": "20260811004",
+    "agency": "NYCHA",
+    "title": "SMD_Services_Indefinite Delivery Indefinite Quantity (IDIQ) Contract for Repair of Gravity Roof Tanks (Office of Water Quality) at Various NYCHA Buildings Citywide",
+    "date": "2026-08-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260811004",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-20"
+  },
+  {
+    "id": "20260812016",
+    "agency": "NYCHA",
+    "title": "Requirement Contract for Installation of V/C Floor Tile in Apartments- Baisley Park Houses Consolidation, Beach 41st St/ Oceanside Houses, Hammel/Carlton Manor Houses, Located Queens-Staten Island Neighborhood (QS03) and (QS04), Queens & Staten Island",
+    "date": "2026-08-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260812016",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-20"
+  },
+  {
+    "id": "20260812023",
+    "agency": "NYC DDC",
+    "title": "Construction Management-Build for LBK16SCRF - Spring Creek Library Renovation",
+    "date": "2026-08-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260812023",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-20"
+  },
+  {
+    "id": "3892109999",
+    "agency": "DASNY",
+    "title": "CUNY Borough of Manhattan Community College Emergency Sewer Repair at Theater 1 (open only to MWBE/Small)",
+    "date": "08/18/2026",
+    "due": "09/22/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-borough-manhattan-community-college-emergency-sewer-repair",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-08-20"
   }
 ]

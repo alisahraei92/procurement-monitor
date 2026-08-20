@@ -303,6 +303,21 @@
       "davis",
       "hall",
       "renovation"
+    ],
+    [
+      "borough",
+      "college",
+      "community",
+      "cuny",
+      "emergency",
+      "manhattan",
+      "mwbe",
+      "only",
+      "open",
+      "repair",
+      "sewer",
+      "small",
+      "theater"
     ]
   ],
   "NYC DDC": [
@@ -664,6 +679,16 @@
       "keener",
       "lighting",
       "upgrade"
+    ],
+    [
+      "build",
+      "construction",
+      "creek",
+      "lbk16scrf",
+      "library",
+      "management",
+      "renovation",
+      "spring"
     ]
   ],
   "NYC EDC": [
@@ -1260,6 +1285,45 @@
       "interest",
       "mattress",
       "recycling"
+    ],
+    [
+      "buildings",
+      "delivery",
+      "gravity",
+      "idiq",
+      "indefinite",
+      "office",
+      "quality",
+      "quantity",
+      "repair",
+      "roof",
+      "smd",
+      "tanks",
+      "water"
+    ],
+    [
+      "41st",
+      "apartments",
+      "baisley",
+      "beach",
+      "carlton",
+      "consolidation",
+      "floor",
+      "hammel",
+      "houses",
+      "installation",
+      "island",
+      "located",
+      "manor",
+      "neighborhood",
+      "oceanside",
+      "park",
+      "qs03",
+      "qs04",
+      "queens",
+      "requirement",
+      "staten",
+      "tile"
     ]
   ]
 }
