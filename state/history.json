@@ -1571,5 +1571,67 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-08-26"
+  },
+  {
+    "id": "20260819034",
+    "agency": "NYCHA",
+    "title": "SMPD_Materials_Door Locking, Electromagnetic Devices and Accessories",
+    "date": "2026-08-26",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260819034",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-27"
+  },
+  {
+    "id": "20260819035",
+    "agency": "NYCHA",
+    "title": "SMPD_MATERIALS_GROUNDS MAINTENANCE",
+    "date": "2026-08-26",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260819035",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-27"
+  },
+  {
+    "id": "20260817011",
+    "agency": "NYCHA",
+    "title": "NYCHA Elevator Resiliency Improvements \u001a Group 3 \u001a Notice of Intent to Request Release of Funds",
+    "date": "2026-08-26",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260817011",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-27"
+  },
+  {
+    "id": "20260821008",
+    "agency": "NYC DDC",
+    "title": "Brownsville Womens Center Fire Alarm and Sprinkler Upgrade",
+    "date": "2026-08-27",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260821008",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-27"
+  },
+  {
+    "id": "20260820038",
+    "agency": "NYC DDC",
+    "title": "Annual Subscription of Commvault License Maintenance",
+    "date": "2026-08-27",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260820038",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-27"
   }
 ]

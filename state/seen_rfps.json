@@ -736,6 +736,22 @@
       "vehicles",
       "wheelchair",
       "women"
+    ],
+    [
+      "alarm",
+      "brownsville",
+      "center",
+      "fire",
+      "sprinkler",
+      "upgrade",
+      "womens"
+    ],
+    [
+      "annual",
+      "commvault",
+      "license",
+      "maintenance",
+      "subscription"
     ]
   ],
   "NYC EDC": [
@@ -1371,6 +1387,31 @@
       "requirement",
       "staten",
       "tile"
+    ],
+    [
+      "accessories",
+      "devices",
+      "door",
+      "electromagnetic",
+      "locking",
+      "materials",
+      "smpd"
+    ],
+    [
+      "grounds",
+      "maintenance",
+      "materials",
+      "smpd"
+    ],
+    [
+      "elevator",
+      "funds",
+      "group",
+      "improvements",
+      "intent",
+      "notice",
+      "release",
+      "resiliency"
     ]
   ]
 }
