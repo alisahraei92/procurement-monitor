@@ -1633,5 +1633,66 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-08-27"
+  },
+  {
+    "id": "20260818018",
+    "agency": "NYCHA",
+    "title": "SMD_ MATERIAL JANITORIAL PESTICIDES",
+    "date": "2026-08-28",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260818018",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-28"
+  },
+  {
+    "id": "20260824034",
+    "agency": "NYC DDC",
+    "title": "HWS2026Q - PRIOR NOTICE SIDEWALKS, QUEENS",
+    "date": "2026-08-28",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260824034",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-08-28"
+  },
+  {
+    "id": "20260824008",
+    "agency": "NYC DDC",
+    "title": "SECUREDET, Emergency for CM Build Crossroads Juvenile Center",
+    "date": "2026-08-28",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260824008",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-28"
+  },
+  {
+    "id": "20260824003",
+    "agency": "NYC DDC",
+    "title": "LL63/DDC/EXT",
+    "date": "2026-08-28",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260824003",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-28"
+  },
+  {
+    "id": "381150",
+    "agency": "DASNY",
+    "title": "CUNY Queens College Campus Wide ADA Facilities Upgrade Phase 3",
+    "date": "08/28/2026",
+    "due": "09/11/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-queens-college-campus-wide-ada-facilities-upgrade-phase-3",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-08-28"
   }
 ]

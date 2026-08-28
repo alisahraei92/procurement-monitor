@@ -341,6 +341,17 @@
       "medgar",
       "studio",
       "television"
+    ],
+    [
+      "ada",
+      "campus",
+      "college",
+      "cuny",
+      "facilities",
+      "phase",
+      "queens",
+      "upgrade",
+      "wide"
     ]
   ],
   "NYC DDC": [
@@ -752,6 +763,25 @@
       "license",
       "maintenance",
       "subscription"
+    ],
+    [
+      "hws2026q",
+      "notice",
+      "prior",
+      "queens",
+      "sidewalks"
+    ],
+    [
+      "build",
+      "center",
+      "crossroads",
+      "emergency",
+      "juvenile",
+      "securedet"
+    ],
+    [
+      "ext",
+      "ll63"
     ]
   ],
   "NYC EDC": [
@@ -1412,6 +1442,12 @@
       "notice",
       "release",
       "resiliency"
+    ],
+    [
+      "janitorial",
+      "material",
+      "pesticides",
+      "smd"
     ]
   ]
 }
