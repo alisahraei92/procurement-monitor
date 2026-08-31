@@ -1694,5 +1694,29 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-queens-college-campus-wide-ada-facilities-upgrade-phase-3",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-08-28"
+  },
+  {
+    "id": "20260824051",
+    "agency": "NYC DDC",
+    "title": "AvePoint DocAve Core",
+    "date": "2026-08-31",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260824051",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-31"
+  },
+  {
+    "id": "20260825001",
+    "agency": "NYC DDC",
+    "title": "NYC.GOV REDESIGNS BUILD",
+    "date": "2026-08-31",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260825001",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-08-31"
   }
 ]
