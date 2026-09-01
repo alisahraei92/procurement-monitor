@@ -1718,5 +1718,42 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-08-31"
+  },
+  {
+    "id": "20260826027",
+    "agency": "NYC DDC",
+    "title": "CO272DW2, SI services for BK Supreme Court Parking Reconstruction and Site Work",
+    "date": "2026-09-01",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260826027",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-01"
+  },
+  {
+    "id": "20260826026",
+    "agency": "NYC H+H",
+    "title": "ancillary medical services for 5 months",
+    "date": "2026-09-01",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260826026",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-01"
+  },
+  {
+    "id": "20260826044",
+    "agency": "NYC H+H",
+    "title": "Steam Tank Modernization at Elmhurst Hospital Center",
+    "date": "2026-09-01",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260826044",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-01"
   }
 ]
