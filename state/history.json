@@ -1755,5 +1755,43 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-09-01"
+  },
+  {
+    "id": "20260824059",
+    "agency": "NYC DDC",
+    "title": "EPIN #85027Y0169 Box.com Annual License Renewal",
+    "date": "2026-09-02",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260824059",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-02"
+  },
+  {
+    "id": "20260825035",
+    "agency": "NYC H+H",
+    "title": "Loading Dock + Morgue at South Brooklyn Health, Brooklyn, NY",
+    "date": "2026-09-02",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260825035",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-02"
+  },
+  {
+    "id": "20260825004",
+    "agency": "NYC H+H",
+    "title": "LINAC SUITE RENOVATION AT KINGS COUNTY HOSPITAL",
+    "date": "2026-09-02",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260825004",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-02"
   }
 ]
