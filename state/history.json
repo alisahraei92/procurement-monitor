@@ -1805,5 +1805,28 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-09-03"
+  },
+  {
+    "id": "20260831020",
+    "agency": "NYC DDC",
+    "title": "Clarke Bronx Family Criminal Courthouse Roof Upgrade",
+    "date": "2026-09-04",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260831020",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-04"
+  },
+  {
+    "id": "3596709999-P17",
+    "agency": "DASNY",
+    "title": "CUNY Bklyn College - Furnish, Delivery, and User Training Animal Cage & Bottle Washer",
+    "date": "09/04/2026",
+    "due": "09/28/2026 - 2:30 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-bklyn-college-furnish-delivery-and-user-training-animal-cage",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-09-04"
   }
 ]

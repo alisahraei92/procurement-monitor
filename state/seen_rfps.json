@@ -352,6 +352,19 @@
       "queens",
       "upgrade",
       "wide"
+    ],
+    [
+      "animal",
+      "bklyn",
+      "bottle",
+      "cage",
+      "college",
+      "cuny",
+      "delivery",
+      "furnish",
+      "training",
+      "user",
+      "washer"
     ]
   ],
   "NYC DDC": [
@@ -817,6 +830,15 @@
       "improvements",
       "safety",
       "street"
+    ],
+    [
+      "bronx",
+      "clarke",
+      "courthouse",
+      "criminal",
+      "family",
+      "roof",
+      "upgrade"
     ]
   ],
   "NYC EDC": [
