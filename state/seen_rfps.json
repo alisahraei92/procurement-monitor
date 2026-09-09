@@ -365,6 +365,26 @@
       "training",
       "user",
       "washer"
+    ],
+    [
+      "abatement",
+      "apartment",
+      "asbestos",
+      "associated",
+      "complex",
+      "eoi",
+      "olde",
+      "purchase",
+      "replacement",
+      "roof",
+      "street",
+      "suny"
+    ],
+    [
+      "contracting",
+      "job",
+      "order",
+      "regions"
     ]
   ],
   "NYC DDC": [
@@ -839,6 +859,14 @@
       "family",
       "roof",
       "upgrade"
+    ],
+    [
+      "armed",
+      "guard",
+      "nycddc",
+      "related",
+      "security",
+      "unarmed"
     ]
   ],
   "NYC EDC": [
@@ -952,6 +980,14 @@
       "maritime",
       "program",
       "readiness"
+    ],
+    [
+      "master",
+      "nycedc"
+    ],
+    [
+      "maritime",
+      "nycedc"
     ]
   ],
   "NYC H+H": [
@@ -1534,6 +1570,12 @@
       "material",
       "pesticides",
       "smd"
+    ],
+    [
+      "material",
+      "plumbing",
+      "smpd",
+      "supplies"
     ]
   ]
 }

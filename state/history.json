@@ -1828,5 +1828,76 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-bklyn-college-furnish-delivery-and-user-training-animal-cage",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-09-04"
+  },
+  {
+    "id": "20260828019",
+    "agency": "NYCHA",
+    "title": "SMPD_MATERIAL_PLUMBING SUPPLIES",
+    "date": "2026-09-08",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260828019",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-09"
+  },
+  {
+    "id": "20260828017",
+    "agency": "NYC DDC",
+    "title": "NYCDDC Armed and Unarmed Security Guard and Related Services",
+    "date": "2026-09-08",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260828017",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-09"
+  },
+  {
+    "id": "20260902006",
+    "agency": "NYC EDC",
+    "title": "NYCEDC Master Contract",
+    "date": "2026-09-09",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260902006",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-09"
+  },
+  {
+    "id": "20260902005",
+    "agency": "NYC EDC",
+    "title": "NYCEDC Maritime Contract",
+    "date": "2026-09-09",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260902005",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-09"
+  },
+  {
+    "id": "391360",
+    "agency": "DASNY",
+    "title": "SUNY Purchase \u2013 The Olde Apartment Complex H Street Roof Replacement & Associated Asbestos Abatement (EOI)",
+    "date": "09/09/2026",
+    "due": "10/08/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/suny-purchase-olde-apartment-complex-h-street-roof-replacement",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-09-09"
+  },
+  {
+    "id": "Contract",
+    "agency": "DASNY",
+    "title": "Job Order Contracting Regions 1 \u2013 10",
+    "date": "09/08/2026",
+    "due": "10/27/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/job-order-contracting-regions-1-10",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-09-09"
   }
 ]
