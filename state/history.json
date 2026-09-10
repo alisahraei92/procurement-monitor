@@ -1899,5 +1899,78 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/job-order-contracting-regions-1-10",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-09-09"
+  },
+  {
+    "id": "20260901025",
+    "agency": "NYCHA",
+    "title": "SMD_A&CM_RFQ #517934 Basketball Court at Clinton Houses - Manhattan",
+    "date": "2026-09-10",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260901025",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-10"
+  },
+  {
+    "id": "20260904017",
+    "agency": "NYCHA",
+    "title": "SMD_A&CM_RFQ #517985 - Elevator Rehabilitation at Cassidy Lafayette/Woodson Houses",
+    "date": "2026-09-10",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260904017",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-10"
+  },
+  {
+    "id": "20260902026",
+    "agency": "NYC DDC",
+    "title": "Track IT! Licenses Maintenance and Support",
+    "date": "2026-09-10",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260902026",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-10"
+  },
+  {
+    "id": "20260902028",
+    "agency": "NYC H+H",
+    "title": "Harlem Hospital_Ron Brown Cooling Tower Replacement",
+    "date": "2026-09-10",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260902028",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-10"
+  },
+  {
+    "id": "Issue",
+    "agency": "DASNY",
+    "title": "Underwriter Services",
+    "date": "09/10/2026",
+    "due": "10/08/2026 - 3:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/underwriter-services",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-09-10"
+  },
+  {
+    "id": "3884409999-P16",
+    "agency": "DASNY",
+    "title": "SUNY Monroe Community College - Furnish and Deliver Newport Equipment",
+    "date": "09/01/2026",
+    "due": "09/15/2026 - 2:30 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/suny-monroe-community-college-furnish-and-deliver-newport-equipment",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-09-10"
   }
 ]

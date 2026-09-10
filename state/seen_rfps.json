@@ -385,6 +385,19 @@
       "job",
       "order",
       "regions"
+    ],
+    [
+      "underwriter"
+    ],
+    [
+      "college",
+      "community",
+      "deliver",
+      "equipment",
+      "furnish",
+      "monroe",
+      "newport",
+      "suny"
     ]
   ],
   "NYC DDC": [
@@ -867,6 +880,12 @@
       "related",
       "security",
       "unarmed"
+    ],
+    [
+      "licenses",
+      "maintenance",
+      "support",
+      "track"
     ]
   ],
   "NYC EDC": [
@@ -1096,6 +1115,15 @@
       "linac",
       "renovation",
       "suite"
+    ],
+    [
+      "brown",
+      "cooling",
+      "harlem",
+      "hospital",
+      "replacement",
+      "ron",
+      "tower"
     ]
   ],
   "NYC SCA": [
@@ -1576,6 +1604,25 @@
       "plumbing",
       "smpd",
       "supplies"
+    ],
+    [
+      "517934",
+      "basketball",
+      "clinton",
+      "court",
+      "houses",
+      "manhattan",
+      "smd"
+    ],
+    [
+      "517985",
+      "cassidy",
+      "elevator",
+      "houses",
+      "lafayette",
+      "rehabilitation",
+      "smd",
+      "woodson"
     ]
   ]
 }
