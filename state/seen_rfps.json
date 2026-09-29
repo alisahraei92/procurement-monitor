@@ -990,6 +990,38 @@
       "maintenance",
       "support",
       "track"
+    ],
+    [
+      "dental",
+      "equipment",
+      "facilities",
+      "furniture",
+      "health",
+      "hldnknphc",
+      "inc",
+      "initial",
+      "outfitting",
+      "premium",
+      "purchase",
+      "women"
+    ],
+    [
+      "deck",
+      "facade",
+      "nypd",
+      "parking",
+      "rehab",
+      "replacement",
+      "shop"
+    ],
+    [
+      "122",
+      "center",
+      "community",
+      "facade",
+      "landmark",
+      "pql",
+      "reconstruction"
     ]
   ],
   "NYC EDC": [
@@ -1111,6 +1143,25 @@
     [
       "maritime",
       "nycedc"
+    ],
+    [
+      "asset",
+      "building",
+      "consultant",
+      "document",
+      "management",
+      "nycedc",
+      "plans",
+      "platform"
+    ],
+    [
+      "accelerating",
+      "development",
+      "housing",
+      "mass",
+      "rfa",
+      "studio",
+      "timber"
     ]
   ],
   "NYC H+H": [
@@ -1235,6 +1286,12 @@
       "idf",
       "mdf",
       "upgrade"
+    ],
+    [
+      "construction",
+      "dialysis",
+      "queens",
+      "space"
     ]
   ],
   "NYC SCA": [
@@ -1771,6 +1828,20 @@
       "523138",
       "construction",
       "management"
+    ],
+    [
+      "523237",
+      "consulting",
+      "control",
+      "risk",
+      "smd"
+    ],
+    [
+      "523249",
+      "abatement",
+      "lead",
+      "program",
+      "smd"
     ]
   ]
 }
