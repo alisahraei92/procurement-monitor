@@ -1162,6 +1162,13 @@
       "rfa",
       "studio",
       "timber"
+    ],
+    [
+      "boardwalk",
+      "coney",
+      "consultant",
+      "island",
+      "reconstruction"
     ]
   ],
   "NYC H+H": [
@@ -1292,6 +1299,16 @@
       "dialysis",
       "queens",
       "space"
+    ],
+    [
+      "community",
+      "hospital",
+      "lincoln",
+      "mep",
+      "misc",
+      "pharmacy",
+      "trades",
+      "work"
     ]
   ],
   "NYC SCA": [
@@ -1842,6 +1859,14 @@
       "lead",
       "program",
       "smd"
+    ],
+    [
+      "centers",
+      "community",
+      "facilities",
+      "hvac",
+      "maintenance",
+      "within"
     ]
   ]
 }

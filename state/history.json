@@ -2215,5 +2215,43 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-09-29"
+  },
+  {
+    "id": "20260923042",
+    "agency": "NYCHA",
+    "title": "HVAC maintenance services at various community centers within NYCHA facilities",
+    "date": "2026-09-30",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260923042",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-09-30"
+  },
+  {
+    "id": "20260923026",
+    "agency": "NYC EDC",
+    "title": "Consultant Services, Coney Island Boardwalk Reconstruction",
+    "date": "2026-09-30",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260923026",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-30"
+  },
+  {
+    "id": "20260924021",
+    "agency": "NYC H+H",
+    "title": "Community Pharmacy at Lincoln Hospital - GC Work (MISC) MEP Trades",
+    "date": "2026-09-30",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260924021",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-09-30"
   }
 ]
