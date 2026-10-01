@@ -1309,6 +1309,11 @@
       "pharmacy",
       "trades",
       "work"
+    ],
+    [
+      "defense",
+      "malpractice",
+      "medical"
     ]
   ],
   "NYC SCA": [
