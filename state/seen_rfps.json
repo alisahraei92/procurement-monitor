@@ -502,6 +502,18 @@
       "john",
       "justice",
       "repair"
+    ],
+    [
+      "abatement",
+      "asbestos",
+      "auditorium",
+      "beach",
+      "building",
+      "center",
+      "omh",
+      "psychiatric",
+      "rehab",
+      "south"
     ]
   ],
   "NYC DDC": [
@@ -1169,6 +1181,18 @@
       "consultant",
       "island",
       "reconstruction"
+    ],
+    [
+      "acquisition",
+      "business",
+      "extension",
+      "fy27",
+      "industrial",
+      "island",
+      "negotiated",
+      "siedc",
+      "staten",
+      "zone"
     ]
   ],
   "NYC H+H": [
@@ -1872,6 +1896,15 @@
       "hvac",
       "maintenance",
       "within"
+    ],
+    [
+      "borough",
+      "developments",
+      "focus",
+      "general",
+      "idiq",
+      "plumbing",
+      "qsi"
     ]
   ]
 }
