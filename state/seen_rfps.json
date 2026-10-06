@@ -514,6 +514,18 @@
       "psychiatric",
       "rehab",
       "south"
+    ],
+    [
+      "automotive",
+      "dcc",
+      "deliver",
+      "equipment",
+      "fishkill",
+      "furnish",
+      "install",
+      "lab",
+      "shop",
+      "suny"
     ]
   ],
   "NYC DDC": [
@@ -1034,6 +1046,26 @@
       "landmark",
       "pql",
       "reconstruction"
+    ],
+    [
+      "301",
+      "equipment",
+      "headquarters",
+      "henry",
+      "hrmnhenit",
+      "located",
+      "organization",
+      "programs",
+      "purchase",
+      "pwdnhhs",
+      "settlement",
+      "street",
+      "upgrades",
+      "youth"
+    ],
+    [
+      "replacement",
+      "roof"
     ]
   ],
   "NYC EDC": [
