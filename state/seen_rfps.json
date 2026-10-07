@@ -1370,6 +1370,12 @@
       "defense",
       "malpractice",
       "medical"
+    ],
+    [
+      "demonstration",
+      "retrofit",
+      "secondary",
+      "window"
     ]
   ],
   "NYC SCA": [
@@ -1937,6 +1943,11 @@
       "idiq",
       "plumbing",
       "qsi"
+    ],
+    [
+      "initiative",
+      "navigator",
+      "neighborhood"
     ]
   ]
 }

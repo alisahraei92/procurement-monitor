@@ -2337,5 +2337,30 @@
     "url": "https://www.dasny.org/opportunities/rfps-bids/2026/suny-dcc-fishkill-furnish-deliver-and-install-automotive-lab-and-shop",
     "source": "DASNY RFPs & Bids",
     "found_date": "2026-10-06"
+  },
+  {
+    "id": "20260930015",
+    "agency": "NYCHA",
+    "title": "RFP: Neighborhood Navigator Initiative",
+    "date": "2026-10-07",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260930015",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-07"
+  },
+  {
+    "id": "20261001015",
+    "agency": "NYC H+H",
+    "title": "Secondary Window Retrofit Demonstration",
+    "date": "2026-10-07",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261001015",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-10-07"
   }
 ]
