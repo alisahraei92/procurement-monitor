@@ -526,6 +526,31 @@
       "lab",
       "shop",
       "suny"
+    ],
+    [
+      "alarm",
+      "bms",
+      "catskill",
+      "delhi",
+      "fire",
+      "replace",
+      "suny",
+      "system"
+    ],
+    [
+      "abatement",
+      "asbestos",
+      "central",
+      "chiller",
+      "college",
+      "conversion",
+      "cuny",
+      "high",
+      "low",
+      "plant",
+      "pressure",
+      "queens",
+      "steam"
     ]
   ],
   "NYC DDC": [
@@ -1066,6 +1091,11 @@
     [
       "replacement",
       "roof"
+    ],
+    [
+      "cooling",
+      "replacement",
+      "tower"
     ]
   ],
   "NYC EDC": [
@@ -1396,6 +1426,16 @@
       "kitchen",
       "schools",
       "throughout"
+    ],
+    [
+      "advisory",
+      "connection",
+      "consulting",
+      "cpm",
+      "estate",
+      "real",
+      "representative",
+      "tenant"
     ]
   ],
   "NYCHA": [

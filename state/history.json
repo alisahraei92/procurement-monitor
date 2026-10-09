@@ -2362,5 +2362,52 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-10-07"
+  },
+  {
+    "id": "20261001022",
+    "agency": "NYC SCA",
+    "title": "CPM Services in Connection with Real Estate Advisory and Tenant Representative Consulting",
+    "date": "2026-10-09",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261001022",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-09"
+  },
+  {
+    "id": "20261005003",
+    "agency": "NYC DDC",
+    "title": "Cooling tower replacement",
+    "date": "2026-10-09",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261005003",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-10-09"
+  },
+  {
+    "id": "373400",
+    "agency": "DASNY",
+    "title": "SUNY Delhi Replace Catskill Fire Alarm & BMS System",
+    "date": "10/09/2026",
+    "due": "11/10/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/suny-delhi-replace-catskill-fire-alarm-bms-system",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-10-09"
+  },
+  {
+    "id": "388470",
+    "agency": "DASNY",
+    "title": "CUNY Queens College Central Chiller Plant High Pressure to Low Pressure Steam Conversion and Asbestos Abatement",
+    "date": "10/09/2026",
+    "due": "11/10/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-queens-college-central-chiller-plant-high-pressure-low-pressure",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-10-09"
   }
 ]
