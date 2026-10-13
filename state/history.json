@@ -2422,5 +2422,42 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-10-10"
+  },
+  {
+    "id": "20261005018",
+    "agency": "NYCHA",
+    "title": "SMD_PS_RFP 528414_ FERAL CAT TRAP, NEUTER & RELEASE SERVICES",
+    "date": "2026-10-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261005018",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-13"
+  },
+  {
+    "id": "20260916022",
+    "agency": "NYC DDC",
+    "title": "HLDNBLD12, the purchase of a clinical flow cytometer for New York Blood Center Inc",
+    "date": "2026-10-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260916022",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-10-13"
+  },
+  {
+    "id": "20260916025",
+    "agency": "NYC DDC",
+    "title": "HLKNNYBCL, the purchase of a cell sorter for New York Blood Center Inc",
+    "date": "2026-10-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20260916025",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-10-13"
   }
 ]

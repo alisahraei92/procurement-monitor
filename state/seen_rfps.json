@@ -1096,6 +1096,25 @@
       "cooling",
       "replacement",
       "tower"
+    ],
+    [
+      "blood",
+      "center",
+      "clinical",
+      "cytometer",
+      "flow",
+      "hldnbld12",
+      "inc",
+      "purchase"
+    ],
+    [
+      "blood",
+      "cell",
+      "center",
+      "hlknnybcl",
+      "inc",
+      "purchase",
+      "sorter"
     ]
   ],
   "NYC EDC": [
@@ -2001,6 +2020,15 @@
       "roof",
       "smd",
       "tanks"
+    ],
+    [
+      "528414",
+      "cat",
+      "feral",
+      "neuter",
+      "release",
+      "smd",
+      "trap"
     ]
   ]
 }
