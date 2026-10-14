@@ -551,6 +551,50 @@
       "pressure",
       "queens",
       "steam"
+    ],
+    [
+      "abatement",
+      "asbestos",
+      "bldg",
+      "college",
+      "cuny",
+      "gym",
+      "hazmat",
+      "lehman",
+      "music",
+      "old",
+      "replacement",
+      "window"
+    ],
+    [
+      "abatement",
+      "asbestos",
+      "boilers",
+      "buildings",
+      "center",
+      "hazardous",
+      "hutchings",
+      "including",
+      "materials",
+      "omh",
+      "psychiatric",
+      "replace"
+    ],
+    [
+      "abatement",
+      "asbestos",
+      "business",
+      "college",
+      "concerns",
+      "cuny",
+      "exterior",
+      "fence",
+      "light",
+      "minority",
+      "only",
+      "owned",
+      "perimeter",
+      "women"
     ]
   ],
   "NYC DDC": [
@@ -2029,6 +2073,29 @@
       "release",
       "smd",
       "trap"
+    ],
+    [
+      "523229",
+      "act",
+      "department",
+      "development",
+      "estate",
+      "hotma",
+      "housing",
+      "implementation",
+      "inspection",
+      "modernization",
+      "national",
+      "nspire",
+      "opportunity",
+      "physical",
+      "real",
+      "required",
+      "smpd",
+      "standards",
+      "through",
+      "training",
+      "urban"
     ]
   ]
 }
