@@ -2517,5 +2517,56 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-10-15"
+  },
+  {
+    "id": "20261013005",
+    "agency": "NYC SCA",
+    "title": "IT SOFTWARE SUBSCRIPTION AND HARDWARE MAINTENANCE",
+    "date": "2026-10-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261013005",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-19"
+  },
+  {
+    "id": "20261009021",
+    "agency": "NYC DDC",
+    "title": "85027P0001-PW348-91,-94_RC for CM/Design/Build for Petroleum Storage Tank Sumps, Citywide",
+    "date": "2026-10-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261009021",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-19"
+  },
+  {
+    "id": "20261009012",
+    "agency": "NYC EDC",
+    "title": "LL63/DOT/NEW",
+    "date": "2026-10-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261009012",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-10-19"
+  },
+  {
+    "id": "20261014004",
+    "agency": "NYC EDC",
+    "title": "Mayor's Office of Mass Engagement - SMS Service Provider RFEI",
+    "date": "2026-10-19",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261014004",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-19"
   }
 ]

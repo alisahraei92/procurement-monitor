@@ -1164,6 +1164,16 @@
       "cleaning",
       "sewers",
       "televising"
+    ],
+    [
+      "85027p0001",
+      "build",
+      "design",
+      "petroleum",
+      "pw348",
+      "storage",
+      "sumps",
+      "tank"
     ]
   ],
   "NYC EDC": [
@@ -1323,6 +1333,18 @@
       "siedc",
       "staten",
       "zone"
+    ],
+    [
+      "dot",
+      "ll63"
+    ],
+    [
+      "engagement",
+      "mass",
+      "mayor",
+      "office",
+      "provider",
+      "sms"
     ]
   ],
   "NYC H+H": [
@@ -1504,6 +1526,12 @@
       "real",
       "representative",
       "tenant"
+    ],
+    [
+      "hardware",
+      "maintenance",
+      "software",
+      "subscription"
     ]
   ],
   "NYCHA": [
