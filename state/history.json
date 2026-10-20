@@ -2568,5 +2568,30 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-10-19"
+  },
+  {
+    "id": "20261009022",
+    "agency": "NYC DDC",
+    "title": "LQBW-EXP, Briarwood Library Renovation Special Inspections",
+    "date": "2026-10-20",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261009022",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-10-20"
+  },
+  {
+    "id": "20261014021",
+    "agency": "NYC DDC",
+    "title": "85027I0001-PV291-QM2, Construction Management - Build Services for Queens Museum Renovation",
+    "date": "2026-10-20",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261014021",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-10-20"
   }
 ]
