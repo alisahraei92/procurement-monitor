@@ -2736,5 +2736,17 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-10-30"
+  },
+  {
+    "id": "20261027008",
+    "agency": "NYC DDC",
+    "title": "LL63/DOT/NEW",
+    "date": "2026-11-02",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261027008",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-11-02"
   }
 ]

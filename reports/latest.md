@@ -1,8 +1,10 @@
-# Daily RFP Report — 2026-11-01
+# Daily RFP Report — 2026-11-02
 
-# New — posted in the last day (0)
+# New — posted in the last day (2)
 
-_Nothing posted in the last day._
+## NYC DDC (2)
+- [LL63/DDC/EXT](https://a856-cityrecord.nyc.gov/RequestDetail/20261027009) (Posted: 2026-11-02)
+- [LL63/DOT/NEW](https://a856-cityrecord.nyc.gov/RequestDetail/20261027008) (Posted: 2026-11-02)
 
 # Posted in the last week (10)
 
@@ -26,7 +28,7 @@ _Nothing posted in the last day._
 - [SBH-02201602-Power and Cooling Upgrade](https://a856-cityrecord.nyc.gov/RequestDetail/20261023001) (Posted: 2026-10-30, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Secondary Window Retrofit Demonstration](https://a856-cityrecord.nyc.gov/RequestDetail/20261020016) (Posted: 2026-10-27)
 
-# All currently open (61 across all agencies)
+# All currently open (62 across all agencies)
 
 ## NYCHA (10 open)
 - [Correction: SMD-Requirement Contract for Installation of V/C Floor Tile in Apartments- Development Name, Located in Manhattan Neighborhood (MN08), and (MN09), Manhattan.](https://a856-cityrecord.nyc.gov/RequestDetail/20261020018) (Posted: 2026-10-28, seen on: NYC City Record Online + NYC Current Solicitations)
@@ -43,21 +45,22 @@ _Nothing posted in the last day._
 ## NYC SCA (0 open)
 _None found._
 
-## NYC DDC (15 open)
+## NYC DDC (16 open)
+- [LL63/DDC/EXT](https://a856-cityrecord.nyc.gov/RequestDetail/20261027009) (Posted: 2026-11-02)
+- [LL63/DOT/NEW](https://a856-cityrecord.nyc.gov/RequestDetail/20261027008) (Posted: 2026-11-02)
 - [HWCB27QXM: REPLACEMENT OF CONCRETE, STEEL FACED AND GRANITE CURBS AND RELATED SIDEWALK AND ROADWAY RESTORATION](https://a856-cityrecord.nyc.gov/RequestDetail/20261026020) (Posted: 2026-10-30, seen on: NYC City Record Online + NYC Current Solicitations)
 - [HWCTSRC04 - Requirements Contract for Title Search Services for Various Projects, Boroughs of Queens, Bronx, Brooklyn and Manhattan.](https://a856-cityrecord.nyc.gov/RequestDetail/20261020013) (Posted: 2026-10-27)
 - [CO295EV, Special Inspections for Bronx Housing Courthouse](https://a856-cityrecord.nyc.gov/RequestDetail/20261019029) (Posted: 2026-10-27)
 - [Complete Plus License Subscription](https://a856-cityrecord.nyc.gov/RequestDetail/20261020007) (Posted: 2026-10-26)
 - [LNXA20WKF, Wakefield Library  ADA Renovation](https://a856-cityrecord.nyc.gov/RequestDetail/20261019031) (Posted: 2026-10-26)
 - [Asbestos, Lead and Mold Abatement Services - Brooklyn and Queens](https://a856-cityrecord.nyc.gov/RequestDetail/20261019008) (Posted: 2026-10-23)
-- [LL63/DDC/EXT](https://a856-cityrecord.nyc.gov/RequestDetail/20261015023) (Posted: 2026-10-22)
 - [85027I0001-PV291-QM2, Construction Management - Build Services for Queens Museum Renovation](https://a856-cityrecord.nyc.gov/RequestDetail/20261014021) (Posted: 2026-10-20, seen on: NYC City Record Online + NYC Current Solicitations)
 - [85027P0001-PW348-91,-94_RC for CM/Design/Build for Petroleum Storage Tank Sumps, Citywide](https://a856-cityrecord.nyc.gov/RequestDetail/20261009021) (Posted: 2026-10-19, seen on: NYC City Record Online + NYC Current Solicitations)
 - [SE-885 - Trunk Sewer & Outfall at Bergen Basin for the 150th Street Trunk Sewer which shares an Outfall with the Guy R Brewer Trunk sewer](https://a856-cityrecord.nyc.gov/RequestDetail/20260729023) (Posted: 2026-08-05, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Emergency Water Main Work](https://a856-cityrecord.nyc.gov/RequestDetail/20260420040) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Emergency Sewer Work](https://a856-cityrecord.nyc.gov/RequestDetail/20260420042) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
+- [MWBE General Construction - Small Projects](https://a856-cityrecord.nyc.gov/RequestDetail/20260420031) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Installation of Styrene-Butadiene-Styrene (SBS) Modified Bitumen Roofing System](https://a856-cityrecord.nyc.gov/RequestDetail/20260420038) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Reconstruction and Restoration of Landmarked and Landmark-Quality Buildings](https://a856-cityrecord.nyc.gov/RequestDetail/20260420035) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
-- [General Construction Medium Projects](https://a856-cityrecord.nyc.gov/RequestDetail/20260420032) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
 - [INSTALLATION OF COLD FLUID APPLIED REINFORCED MEMBRANE ROOFING SYSTEM](https://a856-cityrecord.nyc.gov/RequestDetail/20260420036) (Posted: 2026-04-27, seen on: NYC City Record Online + NYC Current Solicitations)
 
 ## BPCA (0 open)
@@ -84,8 +87,8 @@ _None found._
 - [OMH Hutchings Psychiatric Center Replace Boilers in Buildings 16 & 17 including Asbestos and Hazardous Materials Abatement](https://www.dasny.org/opportunities/rfps-bids/2026/omh-hutchings-psychiatric-center-replace-boilers-buildings-16-17) (Posted: 10/14/2026, Due: 11/19/2026 - 2:00 PM)
 - [OMH Hutchings Psychiatric Center Replace Boilers in Buildings 16 & 17 including Asbestos and Hazardous Materials Abatement](https://www.dasny.org/opportunities/rfps-bids/2026/omh-hutchings-psychiatric-center-replace-boilers-buildings-16-17) (Posted: 10/14/2026, Due: 11/19/2026 - 2:00 PM)
 - [REBID: SUNY Monroe Community College - Furnish and Deliver Newport Equipment](https://www.dasny.org/opportunities/rfps-bids/2026/rebid-suny-monroe-community-college-furnish-and-deliver-newport) (Posted: 10/09/2026, Due: 11/02/2026 - 2:30 PM)
-- [CUNY Queens College Central Chiller Plant High Pressure to Low Pressure Steam Conversion and Asbestos Abatement](https://www.dasny.org/opportunities/rfps-bids/2026/cuny-queens-college-central-chiller-plant-high-pressure-low-pressure) (Posted: 10/09/2026, Due: 11/10/2026 - 2:00 PM)
 - [SUNY Delhi Replace Catskill Fire Alarm & BMS System](https://www.dasny.org/opportunities/rfps-bids/2026/suny-delhi-replace-catskill-fire-alarm-bms-system) (Posted: 10/09/2026, Due: 11/10/2026 - 2:00 PM)
+- [CUNY Queens College Central Chiller Plant High Pressure to Low Pressure Steam Conversion and Asbestos Abatement](https://www.dasny.org/opportunities/rfps-bids/2026/cuny-queens-college-central-chiller-plant-high-pressure-low-pressure) (Posted: 10/09/2026, Due: 11/10/2026 - 2:00 PM)
 - [CUNY Queens College Hot Water Storage Tank Replacement and Asbestos Abatement](https://www.dasny.org/opportunities/rfps-bids/2026/cuny-queens-college-hot-water-storage-tank-replacement-and-asbestos) (Posted: 10/09/2026, Due: 11/17/2026 - 2:00 PM)
 - [CUNY Baruch College Information & Technology Building 2nd, 3rd, & 4th Floor Library Renovation & Associated Asbestos Abatement](https://www.dasny.org/opportunities/rfps-bids/2026/cuny-baruch-college-information-technology-building-2nd-3rd-4th-floor) (Posted: 09/25/2026, Due: 11/04/2026 - 2:00 PM)
 - [OMH Hutchings Psychiatric Center Roof Replacement & Associated Asbestos & Hazardous Material Abatement Buildings 6, and 11 (Phase 1 – Buildings 6 and 11)](https://www.dasny.org/opportunities/rfps-bids/2026/omh-hutchings-psychiatric-center-roof-replacement-associated-0) (Posted: 09/25/2026, Due: 11/05/2026 - 2:00 PM)
@@ -103,22 +106,22 @@ _None found._
 - [Harlem Hospital_Ron Brown Cooling Tower Replacement](https://a856-cityrecord.nyc.gov/RequestDetail/20260902028) (Posted: 2026-09-10, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Bid Extension: Loading Dock + Morgue at South Brooklyn Health, Brooklyn, NY](https://a856-cityrecord.nyc.gov/RequestDetail/20260825035) (Posted: 2026-09-02, seen on: NYC City Record Online + NYC Current Solicitations)
 - [Correction: Steam Tank Modernization at Elmhurst Hospital Center](https://a856-cityrecord.nyc.gov/RequestDetail/20260826044) (Posted: 2026-09-01, seen on: NYC City Record Online + NYC Current Solicitations)
-- [Bid Extension: Elmhurst Hospital, Entryway Renovation](https://a856-cityrecord.nyc.gov/RequestDetail/20260625055) (Posted: 2026-07-02, seen on: NYC City Record Online + NYC Current Solicitations)
+- [Bid Extension: Elmhurst Hospital, Entryway Renovation](https://a0333-passportpublic.nyc.gov/rfx.html) (Posted: 2026-07-02, Due: 2026-11-04)
 
 ## Diagnostics (for debugging — safe to ignore)
-- City Record [NYCHA]: 7000 rows fetched, 1082 matched agency, 725 matched solicitation keywords, 14 passed date filter, 14 after id-dedup
-- Current Solicitations [NYCHA]: 5000 rows fetched, 815 matched agency, 14 currently open/recent
+- City Record [NYCHA]: 7000 rows fetched, 1526 matched agency, 1166 matched solicitation keywords, 14 passed date filter, 14 after id-dedup
+- Current Solicitations [NYCHA]: 5000 rows fetched, 814 matched agency, 14 currently open/recent
 - PASSPort [NYCHA]: 0 table rows rendered, 0 matched agency
-- City Record [NYC SCA]: 7000 rows fetched, 1385 matched agency, 1240 matched solicitation keywords, 0 passed date filter, 0 after id-dedup
+- City Record [NYC SCA]: 6000 rows fetched, 1001 matched agency, 966 matched solicitation keywords, 0 passed date filter, 0 after id-dedup
 - City Record [NYC SCA] sample date fields: {"start_date": "2026-10-19T00:00:00.000", "end_date": "2026-10-19T00:00:00.000", "due_date": "2026-10-21T15:00:00.000"}
 - Current Solicitations [NYC SCA]: 5000 rows fetched, 316 matched agency, 0 currently open/recent
 - PASSPort [NYC SCA]: 0 table rows rendered, 0 matched agency
-- City Record [NYC DDC]: 7000 rows fetched, 1791 matched agency, 724 matched solicitation keywords, 20 passed date filter, 20 after id-dedup
+- City Record [NYC DDC]: 7000 rows fetched, 1750 matched agency, 729 matched solicitation keywords, 21 passed date filter, 21 after id-dedup
 - Current Solicitations [NYC DDC]: 5000 rows fetched, 408 matched agency, 31 currently open/recent
 - PASSPort [NYC DDC]: 0 table rows rendered, 0 matched agency
-- City Record [NYC EDC]: 7237 rows fetched, 1457 matched agency, 887 matched solicitation keywords, 6 passed date filter, 6 after id-dedup
+- City Record [NYC EDC]: 6000 rows fetched, 933 matched agency, 508 matched solicitation keywords, 6 passed date filter, 6 after id-dedup
 - Current Solicitations [NYC EDC]: 5000 rows fetched, 209 matched agency, 6 currently open/recent
 - PASSPort [NYC EDC]: 0 table rows rendered, 0 matched agency
-- City Record [NYC H+H]: 7587 rows fetched, 623 matched agency, 600 matched solicitation keywords, 12 passed date filter, 12 after id-dedup
+- City Record [NYC H+H]: 6000 rows fetched, 21 matched agency, 19 matched solicitation keywords, 11 passed date filter, 11 after id-dedup
 - Current Solicitations [NYC H+H]: 5000 rows fetched, 165 matched agency, 11 currently open/recent
 - PASSPort [NYC H+H]: 0 table rows rendered, 0 matched agency
