@@ -2748,5 +2748,42 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-11-02"
+  },
+  {
+    "id": "20261027022",
+    "agency": "NYCHA",
+    "title": "PS_RFP_Mold Assessment Services - PACT/RAD Sites",
+    "date": "2026-11-04",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261027022",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-05"
+  },
+  {
+    "id": "20261029008",
+    "agency": "NYC DDC",
+    "title": "Deep Geotechnical and Environmental Land and Marine Borings to Support DOT and DEP Capital Projects, Citywide",
+    "date": "2026-11-05",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261029008",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-11-05"
+  },
+  {
+    "id": "20261029007",
+    "agency": "NYC DDC",
+    "title": "Project EC-WMC27 Citywide Emergency Reconstruction of Water Mains (PQL)",
+    "date": "2026-11-05",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261029007",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-11-05"
   }
 ]
