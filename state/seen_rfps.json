@@ -653,6 +653,35 @@
       "lead",
       "replacements",
       "suny"
+    ],
+    [
+      "access",
+      "card",
+      "cctv",
+      "center",
+      "children",
+      "facility",
+      "lawrence",
+      "office",
+      "omh",
+      "psychiatric",
+      "safety",
+      "systems",
+      "vms",
+      "youth"
+    ],
+    [
+      "air",
+      "brooklyn",
+      "buildings",
+      "center",
+      "children",
+      "controls",
+      "handling",
+      "omh",
+      "psychiatric",
+      "replace",
+      "units"
     ]
   ],
   "NYC DDC": [
@@ -1675,6 +1704,26 @@
       "power",
       "sbh",
       "upgrade"
+    ],
+    [
+      "camera",
+      "mep",
+      "metropolitan",
+      "misc",
+      "nuclear",
+      "renovation",
+      "suite",
+      "trades",
+      "work"
+    ],
+    [
+      "24202204",
+      "bid",
+      "construction",
+      "extension",
+      "main",
+      "ncb",
+      "otxhu"
     ]
   ],
   "NYC SCA": [

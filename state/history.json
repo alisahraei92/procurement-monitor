@@ -2785,5 +2785,53 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-11-05"
+  },
+  {
+    "id": "20261102020",
+    "agency": "NYC H+H",
+    "title": "Metropolitan - Nuclear Camera Suite Renovation GC Work and MISC MEP Trades",
+    "date": "2026-11-06",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261102020",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-06"
+  },
+  {
+    "id": "20261001018",
+    "agency": "NYC H+H",
+    "title": "Bid Extension: 24202204: NCB OTxHU Main Construction",
+    "date": "2026-10-02",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261001018",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-06"
+  },
+  {
+    "id": "382440",
+    "agency": "DASNY",
+    "title": "OMH St. Lawrence Psychiatric Center \u2013 St. Lawrence Children\u2019s & Youth Facility Safety Office, Card Access, and CCTV /VMS Systems",
+    "date": "11/06/2026",
+    "due": "12/15/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/omh-st-lawrence-psychiatric-center-st-lawrence-childrens-youth",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-11-06"
+  },
+  {
+    "id": "383130",
+    "agency": "DASNY",
+    "title": "OMH Brooklyn Children\u2019s Psychiatric Center Replace Air Handling Units and Controls at Buildings 1 and 2",
+    "date": "11/05/2026",
+    "due": "12/03/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/omh-brooklyn-childrens-psychiatric-center-replace-air-handling-units",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-11-06"
   }
 ]
