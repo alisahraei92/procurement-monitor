@@ -2364,6 +2364,10 @@
       "pact",
       "rad",
       "sites"
+    ],
+    [
+      "employment",
+      "neighborhood"
     ]
   ]
 }
