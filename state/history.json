@@ -2870,5 +2870,42 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-11-12"
+  },
+  {
+    "id": "20261106020",
+    "agency": "NYC H+H",
+    "title": "Jacobi Building 1 Roof 2",
+    "date": "2026-11-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261106020",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-13"
+  },
+  {
+    "id": "20261106018",
+    "agency": "NYC H+H",
+    "title": "Jacobi Patient Account Decanting",
+    "date": "2026-11-13",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261106018",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-13"
+  },
+  {
+    "id": "349310",
+    "agency": "DASNY",
+    "title": "CUNY Lehman College Tunnel Expansion Joints and Courtyards Waterproofing",
+    "date": "11/13/2026",
+    "due": "12/04/2026 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-lehman-college-tunnel-expansion-joints-and-courtyards",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-11-13"
   }
 ]
