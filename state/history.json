@@ -2931,5 +2931,40 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-11-17"
+  },
+  {
+    "id": "20261112008",
+    "agency": "NYC DDC",
+    "title": "NON-STANDARD PEDESTRIAN RAMP",
+    "date": "2026-11-18",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261112008",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-11-18"
+  },
+  {
+    "id": "20261112007",
+    "agency": "NYC DDC",
+    "title": "PW311S20A, Renewal of RC for Geotechnical Engineering Various Projects, Citywide",
+    "date": "2026-11-18",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261112007",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-11-18"
+  },
+  {
+    "id": "355280",
+    "agency": "DASNY",
+    "title": "CUNY Medgar Evers College Bedford Avenue Building 3-Season Pavilion (Minority and Women-Owned Business Concerns Only) (Set Aside)",
+    "date": "11/18/2026",
+    "due": "12/18/2026 - 8:15 AM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/cuny-medgar-evers-college-bedford-avenue-building-3-season-pavilion",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-11-18"
   }
 ]
