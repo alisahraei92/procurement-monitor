@@ -2992,5 +2992,29 @@
       "NYC Current Solicitations"
     ],
     "found_date": "2026-11-20"
+  },
+  {
+    "id": "20261109021",
+    "agency": "NYCHA",
+    "title": "RFP 521197 - Environmental Investigations and Abatement Monitoring for Asbestos, Lead, Mold, and Soil Contaminant",
+    "date": "2026-11-23",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261109021",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-23"
+  },
+  {
+    "id": "388110",
+    "agency": "DASNY",
+    "title": "OMH Queens Children\u2019s Psychiatric Center Building 56 Roll-Down Door",
+    "date": "11/23/2026",
+    "due": "01/05/2027 - 2:00 PM",
+    "status": "New",
+    "url": "https://www.dasny.org/opportunities/rfps-bids/2026/omh-queens-childrens-psychiatric-center-building-56-roll-down-door",
+    "source": "DASNY RFPs & Bids",
+    "found_date": "2026-11-23"
   }
 ]
