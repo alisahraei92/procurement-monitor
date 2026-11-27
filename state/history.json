@@ -3039,5 +3039,30 @@
       "NYC City Record Online"
     ],
     "found_date": "2026-11-25"
+  },
+  {
+    "id": "20261120007",
+    "agency": "NYC DDC",
+    "title": "Park Avenue Pedestrian Safety Improvements",
+    "date": "2026-11-27",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261120007",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online"
+    ],
+    "found_date": "2026-11-27"
+  },
+  {
+    "id": "20261119004",
+    "agency": "NYC H+H",
+    "title": "7TH FLOOR ROOF REPLACEMENT HARLEM HOSPITAL - MLK Pavilion, New York, NY",
+    "date": "2026-11-27",
+    "url": "https://a856-cityrecord.nyc.gov/RequestDetail/20261119004",
+    "source": "NYC City Record Online",
+    "sources": [
+      "NYC City Record Online",
+      "NYC Current Solicitations"
+    ],
+    "found_date": "2026-11-27"
   }
 ]
